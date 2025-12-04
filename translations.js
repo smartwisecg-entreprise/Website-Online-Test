@@ -48,7 +48,7 @@ const translations = {
         home_service_geschool_title: "Geschool Educational ERP",
         home_service_geschool_desc: "The all-in-one software solution for managing students, grades, finances, and communication within your educational institution.",
         home_service_geschool_btn: "Discover Geschool",
-        
+
         // --- VTC Page (vtc.html) ---
         vtc_hero_word1: "Request a ride,",
         vtc_hero_word2: "or",
@@ -75,7 +75,7 @@ const translations = {
         vtc_tier2_desc: "High-end vehicles with top-rated drivers for a luxury experience.",
         vtc_download_title: "Download the app",
         vtc_download_desc: "Get GoRide to start traveling with ease.",
-        
+
         // --- Nextcloud Page (nextcloud.html) ---
         nextcloud_hero_line1: "Your Data, Your Rules.",
         nextcloud_hero_line2: "Securely Hosted.",
@@ -159,7 +159,7 @@ const translations = {
         geschool_feature_block5_item3: "Protect the institution's data with an integrated automated backup module.",
         geschool_contact_title: "Interested in Geschool?",
         geschool_contact_desc: "Contact us today for a personalized demo and discover how Geschool can transform your institution's management.",
-        geschool_contact_cta: "Contact via WhatsApp", 
+        geschool_contact_cta: "Contact via WhatsApp",
         geschool_contact_wa_link: "https://wa.me/242056323722?text=Hello,%20I'm%20interested%20in%20the%20Geschool%20software.",
 
         // --- About Us Page (about.html) ---
@@ -188,7 +188,19 @@ const translations = {
         about_cta_title: "Ready to build the future with us?",
         about_cta_desc: "Let's discuss your projects. Our team is ready to turn your challenges into opportunities.",
         about_cta_btn: "Contact Us",
-        
+        about_expertise_title: "Our Areas of Expertise",
+        about_expertise_subtitle: "Advanced technological expertise to meet your most complex challenges.",
+        exp_arcgis_title: "ArcGIS & Geomatics",
+        exp_arcgis_desc: "Deployment and management of advanced GIS solutions with ArcGIS Pro and ArcGIS Enterprise.",
+        exp_network_title: "Networks & Systems",
+        exp_network_desc: "Infrastructure architecture, IT security, and system administration.",
+        exp_soft_title: "Software Development",
+        exp_soft_desc: "Design of custom software tailored to your specific business processes.",
+        exp_app_title: "Mobile & Web Applications",
+        exp_app_desc: "Development of high-performance applications (Android, iOS) and intuitive web platforms.",
+        exp_web_title: "Website Development",
+        exp_web_desc: "Creation of modern, responsive, and SEO-optimized corporate and e-commerce websites.",
+
         // --- Contact Page (contact.html) ---
         contact_hero_word1: "Let's Get",
         contact_hero_word2: "in",
@@ -219,11 +231,12 @@ const translations = {
         news_hero_word2: "News",
         news_hero_subtitle: "Stay informed about the latest innovations, partnerships, and announcements from Smart Wise.",
 
-         // --- Coming Soon Page --- // Ajouté
+        // --- Coming Soon Page --- // Ajouté
         coming_soon_title: "Coming Soon",
         coming_soon_desc: "We are working hard to bring you this new feature. Stay tuned to discover our innovations.",
         coming_soon_btn: "Back to Home"
-        
+
+
     },
     fr: {
         // Meta Titles
@@ -247,7 +260,7 @@ const translations = {
         nav_geschool: "GESCHOOL",
         desc_geschool: "ERP de gestion scolaire complet",
         nav_contact: "Contact",
-        
+
         // Footer
         footer_explore_title: "Explorer",
         footer_contact_title: "Nous Joindre",
@@ -414,10 +427,22 @@ const translations = {
         about_commitment2_desc: "Nous travaillons à vos côtés, en totale transparence. Votre vision devient notre mission commune, assurant un alignement parfait de nos objectifs.",
         about_commitment3_title: "Support Proactif",
         about_commitment3_desc: "Notre mission ne s'arrête pas à la livraison. Nous assurons un suivi et un support réactifs pour garantir la performance continue de vos solutions.",
+        about_expertise_title: "Nos Domaines d'Expertise",
+        about_expertise_subtitle: "Une maîtrise technologique pointue pour répondre à vos défis les plus complexes.",
+        exp_arcgis_title: "ArcGIS & Géomatique",
+        exp_arcgis_desc: "Déploiement et gestion de solutions SIG avancées avec ArcGIS Pro et ArcGIS Enterprise.",
+        exp_network_title: "Réseaux & Systèmes",
+        exp_network_desc: "Architecture d'infrastructure, sécurité informatique et administration système.",
+        exp_soft_title: "Développement Logiciel",
+        exp_soft_desc: "Conception de logiciels sur-mesure adaptés à vos processus métiers spécifiques.",
+        exp_app_title: "Applications Mobile & Web",
+        exp_app_desc: "Développement d'applications performantes (Android, iOS) et plateformes web intuitives.",
+        exp_web_title: "Développement Site Web",
+        exp_web_desc: "Création de sites vitrines et e-commerce modernes, responsives et optimisés SEO.",
         about_cta_title: "Prêt à construire l'avenir avec nous ?",
         about_cta_desc: "Discutons de vos projets. Notre équipe est prête à transformer vos défis en opportunités.",
         about_cta_btn: "Contactez-nous",
-        
+
         // --- Contact Page (contact.html) ---
         contact_hero_word1: "Entrons",
         contact_hero_word2: "en",
@@ -448,7 +473,7 @@ const translations = {
         news_hero_word2: "Actualité",
         news_hero_subtitle: "Restez informé des dernières innovations, partenariats et annonces de Smart Wise.",
 
-         // --- Coming Soon Page --- // Ajouté
+        // --- Coming Soon Page --- // Ajouté
         coming_soon_title: "Bientôt Disponible",
         coming_soon_desc: "Nous travaillons dur pour vous apporter cette nouveauté. Restez connectés pour découvrir nos innovations.",
         coming_soon_btn: "Retour à l'accueil"
