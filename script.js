@@ -293,80 +293,149 @@ document.addEventListener('DOMContentLoaded', () => {
             }, "-=0.8");
         }
         
-        // --- 4. Page À Propos ---
-        if (document.querySelector('.about-hero')) {
-            if (document.querySelector(".about-hero h1 span")) {
-                gsap.from(".about-hero h1 span", {
-                    duration: 1.2,
-                    opacity: 0,
-                    y: 40,
-                    rotationX: -90,
-                    ease: "power3.out",
-                    stagger: 0.2,
-                    delay: 0.2
-                });
-            }
-            gsap.from(".about-hero .hero-text p", {
-                duration: 1,
-                opacity: 0,
-                y: 20,
-                ease: "power2.out",
-                delay: 0.8
-            });
+      // --- 4. Page À Propos (Version Premium & Stabilisée) ---
+if (document.querySelector('.about-hero')) {
+    
+    // 1. Initialisation : On rend tout visible pour GSAP
+    gsap.set([".about-hero h1 span", ".about-hero p", ".expertise-card", ".value-card", ".commitment-card", ".story-text", ".story-image img"], { visibility: "visible" });
 
-            // Animations spécifiques sections About
-            const sections = [
-                '.story-content', 
-                '.values-section .section-header', 
-                '.commitment-section .section-header',
-                '.cta-section .container'
-            ];
-            sections.forEach(selector => {
-                if(document.querySelector(selector)){
-                    gsap.from(selector, {
-                        scrollTrigger: {
-                            trigger: selector,
-                            start: "top 85%",
-                            toggleActions: "play none none none"
-                        },
-                        opacity: 0,
-                        y: 60,
-                        duration: 1.2,
-                        ease: "power3.out"
-                    });
-                }
-            });
+    // --- ANIMATION HERO (Dynamique et fluide) ---
+    const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    
+    // Titre
+    if (document.querySelector(".about-hero h1 span")) {
+        heroTl.from(".about-hero h1 span", {
+            y: 100,
+            opacity: 0,
+            skewY: 7,
+            duration: 1.2,
+            stagger: 0.15
+        });
+    }
+    
+    // Sous-titre
+    heroTl.from(".about-hero .hero-text p", {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        filter: "blur(5px)"
+    }, "-=0.8");
 
-            if (document.querySelector(".value-card")) {
-                gsap.from(".value-card", {
-                    scrollTrigger: {
-                        trigger: ".values-grid",
-                        start: "top 80%",
-                        toggleActions: "play none none none"
-                    },
-                    opacity: 0,
-                    y: 50,
-                    duration: 0.8,
-                    stagger: 0.2,
-                    ease: "power2.out"
-                });
-            }
 
-            if (document.querySelector(".commitment-card")) {
-                gsap.from(".commitment-card", {
-                    scrollTrigger: {
-                        trigger: ".commitment-grid",
-                        start: "top 80%",
-                        toggleActions: "play none none none"
-                    },
-                    opacity: 0,
-                    y: 50,
-                    duration: 0.8,
-                    stagger: 0.2,
-                    ease: "power2.out"
-                });
-            }
-        }
+    // --- ANIMATION TITRES DE SECTION ---
+    const headers = gsap.utils.toArray('.section-header');
+    headers.forEach(header => {
+        gsap.from(header, {
+            scrollTrigger: {
+                trigger: header,
+                start: "top 85%",
+                toggleActions: "play none none reverse"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+    });
+
+
+    // --- ANIMATION STORY ---
+    if (document.querySelector('.story-image img')) {
+        gsap.from(".story-image img", {
+            scrollTrigger: {
+                trigger: ".story-section",
+                start: "top 75%",
+            },
+            scale: 1.2,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power2.out"
+        });
+    }
+    if (document.querySelector('.story-text')) {
+        gsap.from(".story-text", {
+            scrollTrigger: {
+                trigger: ".story-section",
+                start: "top 75%",
+            },
+            x: 50,
+            opacity: 0,
+            duration: 1.2,
+            delay: 0.2,
+            ease: "power2.out"
+        });
+    }
+
+
+    // --- ANIMATION EXPERTISE (Le modèle de référence) ---
+    if (document.querySelector(".expertise-card")) {
+        gsap.from(".expertise-card", {
+            scrollTrigger: {
+                trigger: ".expertise-grid",
+                start: "top 85%", 
+            },
+            y: 80, 
+            opacity: 0,
+            scale: 0.95,
+            filter: "blur(10px)", 
+            duration: 1,
+            stagger: 0.15,
+            ease: "power4.out"
+        });
+    }
+
+
+    // --- ANIMATION VALEURS (Mise à jour : Style Expertise) ---
+    if (document.querySelector(".value-card")) {
+        gsap.from(".value-card", {
+            scrollTrigger: {
+                trigger: ".values-grid", // Déclencheur propre à cette section
+                start: "top 85%",
+            },
+            // Mêmes propriétés que Expertise
+            y: 80, 
+            opacity: 0,
+            scale: 0.95,
+            filter: "blur(10px)",
+            duration: 1,
+            stagger: 0.15, // Peut-être ajusté à 0.2 si on veut plus lent
+            ease: "power4.out"
+        });
+    }
+
+
+    // --- ANIMATION ENGAGEMENT (Mise à jour : Style Expertise) ---
+    if (document.querySelector(".commitment-card")) {
+        gsap.from(".commitment-card", {
+            scrollTrigger: {
+                trigger: ".commitment-grid", // Déclencheur propre à cette section
+                start: "top 85%",
+            },
+            // Mêmes propriétés que Expertise
+            y: 80,
+            opacity: 0,
+            scale: 0.95,
+            filter: "blur(10px)",
+            duration: 1,
+            stagger: 0.15,
+            ease: "power4.out"
+        });
+    }
+    
+    // --- ANIMATION CTA ---
+    if (document.querySelector(".cta-section")) {
+         gsap.from(".cta-section .container", {
+            scrollTrigger: {
+                trigger: ".cta-section",
+                start: "top 90%",
+            },
+            scale: 0.8,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+    }
+}
 
         // --- 5. Page Contact ---
         if (document.querySelector('.contact-hero')) {
