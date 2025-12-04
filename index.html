@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="meta_title_home">Smart Wise - Votre Partenaire de Confiance pour la Mobilité et les Solutions Cloud
+    </title>
+    <link rel="icon" type="image/png" href="images/logo_spirale.png">
+    <!-- === AJOUT DU CSS DE SWIPER.JS === -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ... (votre header reste inchangé) ... -->
+    <header>
+        <nav>
+            <div class="container">
+                <!-- === MODIFICATION DU LOGO ICI === -->
+                <a href="index.html" class="logo-link">
+                    <div class="logo-container">
+                        <!-- La spirale, qui sera au-dessus -->
+                        <img src="images/logo_spirale.png" alt="Logo Smart Wise Spirale" class="logo-spirale">
+                        <!-- Le texte, qui se cachera derrière -->
+                        <img src="images/logo_text.png" alt="Smart Wise" class="logo-text">
+                    </div>
+                </a>
+                <!-- === FIN DE LA MODIFICATION === -->
+                <ul class="nav-links">
+                    <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                    <li><a href="about.html" data-key="nav_about">À Propos</a></li>
+
+                    <!-- DÉBUT DU MENU DÉROULANT -->
+
+                    <li class="dropdown">
+                        <a href="#">
+                            <span data-key="nav_services">Nos Services</span>
+                            <span class="arrow-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- Lien 1 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="vtc.html">
+                                    <img src="images/car.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_vtc">Smart Wise VTC</span>
+                                </a>
+                            </li>
+                            <!-- Lien 2 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="nextcloud.html">
+                                    <img src="images/cloud-server.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_cloud">Smart Wise Cloud Hosting</span>
+                                </a>
+                            </li>
+                            <!-- Lien 3 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="geschool.html">
+                                    <img src="images/school.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_geschool">Geschool ERP</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- FIN DU MENU DÉROULANT -->
+
+                    <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                    <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <a href="#" lang="fr">FR</a>
+                    <a href="#" lang="en">EN</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ================================================================ -->
+        <!-- === MODIFICATION DE LA SECTION HERO POUR LE DIAPORAMA === -->
+        <!-- ================================================================ -->
+        <section class="home-hero">
+
+            <!-- Le diaporama en arrière-plan -->
+            <div class="hero-slideshow swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Diapositive 1 -->
+                    <div class="swiper-slide">
+                        <img src="images/Index_Hero_Background.webp" alt="Fond d'écran technologie moderne">
+                    </div>
+                    <!-- Diapositive 2 -->
+                    <div class="swiper-slide">
+                        <img src="images/Brazza_Roundabout.webp" alt="Personne utilisant un service VTC">
+                    </div>
+                    <!-- Diapositive 3 -->
+                    <div class="swiper-slide">
+                        <img src="images/School_gestion.webp" alt="Centre de données Cloud">
+                    </div>
+                </div>
+                <!-- === AJOUT POUR LES BARRES DE PROGRESSION === -->
+                <div class="hero-progress-pagination"></div>
+            </div>
+
+            <!-- Le contenu reste au-dessus du diaporama -->
+            <div class="container">
+                <h1 class="hero-title-main">
+                    <span class="hero-word-1" data-key="home_hero_word1">INNOVER</span>
+                    <span class="hero-ampersand">&</span>
+                    <span class="hero-word-2" data-key="home_hero_word2">AMELIORER</span>
+                </h1>
+                <p data-key="home_hero_title">Des Solutions Innovantes pour la Vie Moderne</p>
+                <div class="hero-cta hidden-anim">
+                    <a href="#services" class="btn" data-key="home_hero_cta_learn_more">En savoir plus</a>
+                    <a href="vtc.html" class="btn btn-secondary" data-key="home_hero_cta_vtc">Découvrir GoRide</a>
+                </div>
+            </div>
+        </section>
+        <!-- ================================================================ -->
+        <!-- === FIN DE LA MODIFICATION DE LA SECTION HERO === -->
+        <!-- ================================================================ -->
+
+        <!-- ... (le reste de votre main et le footer restent inchangés) ... -->
+        <section id="services" class="services-section-vertical">
+            <div class="container">
+                <h2 data-key="home_services_title">Nos Services</h2>
+
+                <!-- Service VTC -->
+                <div class="service-block">
+                    <div class="service-image">
+                        <img src="images/hero-phone.png" alt="Application de VTC sur un téléphone">
+                    </div>
+                    <div class="service-text">
+                        <h3 data-key="home_service_vtc_title">Service Smart Wise VTC</h3>
+                        <p data-key="home_service_vtc_desc">Votre service de VTC premium pour des trajets rapides, sûrs
+                            et confortables. Allez où vous voulez en quelques clics.</p>
+                        <a href="vtc.html" class="btn" data-key="home_service_vtc_btn">Découvrir Smart Wise VTC</a>
+                    </div>
+                </div>
+
+                <!-- Service Cloud -->
+                <div class="service-block">
+                    <div class="service-image">
+                        <img src="images/nextcloud-service-image.png" alt="Logo Nextcloud et illustration de cloud">
+                    </div>
+                    <div class="service-text">
+                        <h3 data-key="home_service_cloud_title">Hébergement Cloud Nextcloud</h3>
+                        <p data-key="home_service_cloud_desc">Un cloud privé et sécurisé pour vos fichiers, photos et
+                            projets collaboratifs. Vos données, sous votre contrôle. Hébergé en Europe.</p>
+                        <a href="nextcloud.html" class="btn" data-key="home_service_cloud_btn">Explorer Notre Cloud
+                            hosting</a>
+                    </div>
+                </div>
+
+                <!-- Service Geschool -->
+                <div class="service-block">
+                    <div class="service-image">
+                        <img src="images/geschool-service-image.png"
+                            alt="Illustration du logiciel de gestion scolaire Geschool">
+                    </div>
+                    <div class="service-text">
+                        <h3 data-key="home_service_geschool_title">Geschool ERP Éducatif</h3>
+                        <p data-key="home_service_geschool_desc">La solution logicielle tout-en-un pour la gestion des
+                            apprenants, des notes, des finances et de la communication au sein de votre établissement
+                            scolaire.</p>
+                        <a href="geschool.html" class="btn" data-key="home_service_geschool_btn">Découvrir Geschool</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="container">
+            <!-- Grille symétrique à deux colonnes -->
+            <div class="footer-grid">
+                <!-- Colonne 1: Tous les liens regroupés -->
+                <div class="footer-column">
+                    <h5 data-key="footer_explore_title">Explorer</h5>
+                    <ul>
+                        <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                        <li><a href="about.html" data-key="nav_about_footer">À Propos</a></li>
+                        <li><a href="vtc.html">Smart Wise VTC</a></li>
+                        <li><a href="nextcloud.html">Smart Wise Cloud</a></li>
+                        <li><a href="geschool.html">Geschool ERP</a></li>
+                        <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                        <li><a href="contact.html" data-key="nav_contact_footer">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 2: Contact -->
+                <div class="footer-column">
+                    <h5 data-key="footer_contact_title">Nous Joindre</h5>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <img src="images/location-icon.png" alt="Adresse" class="icon">
+                            <span data-key="footer_address">Immeuble acacia, Mpita, Pointe-Noire, Congo</span>
+                        </li>
+                        <li>
+                            <img src="images/email-icon.png" alt="Email" class="icon">
+                            <a href="mailto:contact@smartwise.cg">contact@smartwise.cg</a>
+                        </li>
+                        <li>
+                            <img src="images/phone-icon.png" alt="Téléphone" class="icon">
+                            <a href="tel:+242056600459">05 660 04 59</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" title="Facebook"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="#" title="Instagram"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                </div>
+                <p class="footer-copyright" data-key="footer_copyright">&copy; 2025 Smart Wise. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+
+    <!-- === BIBLIOTHÈQUES GSAP AJOUTÉES ICI === -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- === AJOUT DU JS DE SWIPER.JS === -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- VOTRE SCRIPT DOIT VENIR APRÈS LES BIBLIOTHÈQUES -->
+    <script src="script.js"></script>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="meta_title_vtc">ZAZA - Des Trajets Rapides et Fiables</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="images/logo_spirale.png" alt="Logo Smart Wise Spirale" class="logo-spirale">
+                        <img src="images/logo_text.png" alt="Smart Wise" class="logo-text">
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                    <li><a href="about.html" data-key="nav_about">À Propos</a></li>
+
+                    <!-- DÉBUT DU MENU DÉROULANT -->
+
+                    <li class="dropdown">
+                        <a href="#">
+                            <span data-key="nav_services">Nos Services</span>
+                            <span class="arrow-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- Lien 1 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="vtc.html">
+                                    <img src="images/car.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_vtc">Smart Wise VTC</span>
+                                </a>
+                            </li>
+                            <!-- Lien 2 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="nextcloud.html">
+                                    <img src="images/cloud-server.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_cloud">Smart Wise Cloud Hosting</span>
+                                </a>
+                            </li>
+                            <!-- Lien 3 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="geschool.html">
+                                    <img src="images/school.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_geschool">Geschool ERP</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- FIN DU MENU DÉROULANT -->
+                    <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                    <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <a href="#" lang="fr">FR</a>
+                    <a href="#" lang="en">EN</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero vtc-hero">
+            <div class="hero-background">
+                <video autoplay muted loop playsinline id="hero-video">
+                    <source src="images/VTC.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+            </div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <!-- === MODIFICATION ICI : Le titre est décomposé en spans === -->
+                    <h1 class="vtc-hero-title">
+                        <span class="hero-word-1" data-key="vtc_hero_word1">Commandez une course,</span>
+                        <span class="hero-word-2" data-key="vtc_hero_word2">ou</span>
+                        <span class="hero-word-3" data-key="vtc_hero_word3">planifiez-la pour plus tard</span>
+
+                    </h1>
+                    <p data-key="vtc_hero_subtitle">Avec une application simple et intuitive, un chauffeur peut être à
+                        votre porte en quelques minutes. Ou planifiez une course à l'avance pour avoir l'esprit
+                        tranquille.</p>
+
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn" data-key="vtc_hero_cta_download"
+                            onclick="return false;">Télécharger l'app</a>
+                        <a href="#" class="btn btn-secondary " data-key="vtc_hero_cta_driver"
+                            onclick="return false;">Devenir Chauffeur</a>
+                    </div>
+
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-phone.png" alt="Application ZAZA sur un smartphone">
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2 data-key="vtc_howitworks_title">Comment ça marche</h2>
+                <div class="steps">
+                    <div class="step">
+                        <img src="images/step-1-icon.png" alt="Étape 1">
+                        <h3 data-key="vtc_step1_title">Commandez</h3>
+                        <p data-key="vtc_step1_desc">Appuyez sur un bouton, un chauffeur arrive.</p>
+                    </div>
+                    <div class="step">
+                        <img src="images/step-2-icon.png" alt="Étape 2">
+                        <h3 data-key="vtc_step2_title">Voyagez</h3>
+                        <p data-key="vtc_step2_desc">Atteignez votre destination, sans stress.</p>
+                    </div>
+                    <div class="step">
+                        <img src="images/step-3-icon.png" alt="Étape 3">
+                        <h3 data-key="vtc_step3_title">Payez</h3>
+                        <p data-key="vtc_step3_desc">Payez facilement via l'application.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 data-key="vtc_features_title">Pourquoi nous choisir ?</h2>
+                <div class="feature">
+                    <div class="feature-text">
+                        <h3 data-key="vtc_feature1_title">La sécurité avant tout</h3>
+                        <p data-key="vtc_feature1_desc">Du suivi de course en temps réel à l'assistance 24/7, votre
+                            sécurité est notre priorité. Tous nos chauffeurs sont vérifiés et formés
+                            professionnellement.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="images/safety-feature.png" alt="Icône de bouclier de sécurité">
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="images/comfort-feature.png" alt="Icône de siège de voiture confortable">
+                    </div>
+                    <div class="feature-text">
+                        <h3 data-key="vtc_feature2_title">Le confort en déplacement</h3>
+                        <p data-key="vtc_feature2_desc">Choisissez parmi une gamme de véhicules adaptés à vos besoins.
+                            Que vous soyez seul ou en groupe, nous avons la voiture parfaite pour un voyage confortable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2 data-key="vtc_pricing_title">Nos options de course</h2>
+                <div class="pricing-tiers">
+                    <div class="tier">
+                        <img src="images/eco-car-icon.png" alt="Voiture Eco">
+                        <h3 data-key="vtc_tier1_title">Eco</h3>
+                        <p data-key="vtc_tier1_desc">Des courses abordables au quotidien pour le voyageur soucieux de
+                            son budget.</p>
+                    </div>
+                    <div class="tier">
+                        <img src="images/vip-car-icon.png" alt="Voiture VIP">
+                        <h3 data-key="vtc_tier2_title">VIP</h3>
+                        <p data-key="vtc_tier2_desc">Des véhicules haut de gamme avec les meilleurs chauffeurs pour une
+                            expérience de luxe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download">
+            <div class="container">
+                <h2 data-key="vtc_download_title">Téléchargez l'application</h2>
+                <p data-key="vtc_download_desc">Téléchargez ZAZA pour commencer à voyager en toute simplicité.</p>
+                <div class="app-badges">
+                    <a href="coming-soon.html" >
+                        <img src="images/app-store-badge.png">
+                       
+                    </a>
+                    <a href="coming-soon.html" >
+                        <img src="images/google-play-badge.png">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h5 data-key="footer_explore_title">Explorer</h5>
+                    <ul>
+                        <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                        <li><a href="about.html" data-key="nav_about_footer">À Propos</a></li>
+                        <li><a href="vtc.html" data-key="nav_vtc">ZAZA</a></li>
+                        <li><a href="nextcloud.html" data-key="nav_cloud">Cloud Hosting</a></li>
+                        <li><a href="geschool.html" data-key="nav_geschool">Geschool</a></li>
+                        <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                        <li><a href="contact.html" data-key="nav_contact_footer">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h5 data-key="footer_contact_title">Nous Joindre</h5>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <img src="images/location-icon.png" alt="Adresse" class="icon">
+                            <span data-key="footer_address">Immeuble acacia, Mpita, Pointe-Noire, Congo</span>
+                        </li>
+                        <li>
+                            <img src="images/email-icon.png" alt="Email" class="icon">
+                            <a href="mailto:contact@smartwise.cg">contact@smartwise.cg</a>
+                        </li>
+                        <li>
+                            <img src="images/phone-icon.png" alt="Téléphone" class="icon">
+                            <a href="tel:+242056600459">05 660 04 59</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="coming-soon.html" title="Facebook"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="coming-soon.html" title="Instagram"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                </div>
+                <p class="footer-copyright" data-key="footer_copyright">&copy; 2025 Smart Wise. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

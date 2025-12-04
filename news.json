@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "image": "images/news_geschool_update.webp",
+    "category_fr": "Mise à jour",
+    "category_en": "Update",
+    "date": "2025-10-20",
+    "title_fr": "Geschool ERP 3.0 est là !",
+    "title_en": "Geschool ERP 3.0 is Here!",
+    "summary_fr": "Découvrez les nouvelles fonctionnalités incroyables de notre ERP éducatif, conçu pour une gestion scolaire encore plus fluide.",
+    "summary_en": "Discover the incredible new features of our educational ERP, designed for even smoother school management.",
+    "content_fr": "<p>La version 3.0 de <strong>Geschool ERP</strong> marque une étape majeure dans notre engagement à fournir les meilleurs outils pour les établissements scolaires. Cette mise à jour inclut un nouveau portail pour les parents, une application mobile repensée et des outils d'analyse de performance des élèves améliorés.</p><p>Nous avons travaillé en étroite collaboration avec plusieurs écoles partenaires pour nous assurer que ces nouvelles fonctionnalités répondent à des besoins réels et concrets sur le terrain.</p>",
+    "content_en": "<p>Version 3.0 of <strong>Geschool ERP</strong> marks a major milestone in our commitment to providing the best tools for educational institutions. This update includes a new parent portal, a redesigned mobile app, and enhanced student performance analytics tools.</p><p>We worked closely with several partner schools to ensure these new features meet real, practical needs in the field.</p>"
+  },
+  {
+    "id": 2,
+    "image": "images/news_vtc_expansion.webp",
+    "category_fr": "Expansion",
+    "category_en": "Expansion",
+    "date": "2025-10-15",
+    "title_fr": "Smart Wise VTC arrive à Brazzaville",
+    "title_en": "Smart Wise VTC Arrives in Brazzaville",
+    "summary_fr": "Notre service VTC étend sa couverture et est désormais disponible dans la capitale, Brazzaville. Voyagez avec style et sécurité.",
+    "summary_en": "Our VTC service is expanding its coverage and is now available in the capital, Brazzaville. Travel with style and safety.",
+    "content_fr": "<p>C'est avec une grande fierté que nous annonçons le lancement officiel de <strong>Smart Wise VTC</strong> à Brazzaville. Après le succès rencontré à Pointe-Noire, nous sommes ravis d'offrir nos services de transport fiables, confortables et sécurisés aux résidents et visiteurs de la capitale.</p><p>Téléchargez l'application dès aujourd'hui et profitez de notre offre de lancement avec <strong>-50% sur votre premier trajet !</strong></p>",
+    "content_en": "<p>We are very proud to announce the official launch of <strong>Smart Wise VTC</strong> in Brazzaville. Following our success in Pointe-Noire, we are thrilled to offer our reliable, comfortable, and secure transportation services to the residents and visitors of the capital.</p><p>Download the app today and take advantage of our launch offer with <strong>50% off your first ride!</strong></p>"
+  },
+  {
+    "id": 3,
+    "image": "images/news_cloud_security.webp",
+    "category_fr": "Sécurité",
+    "category_en": "Security",
+    "date": "2025-10-05",
+    "title_fr": "Renforcement de la sécurité de Smart Wise Cloud",
+    "title_en": "Smart Wise Cloud Security Enhancement",
+    "summary_fr": "Nous avons déployé de nouvelles mesures de sécurité, incluant le chiffrement de bout en bout, pour garantir la confidentialité de vos données.",
+    "summary_en": "We have deployed new security measures, including end-to-end encryption, to ensure the confidentiality of your data.",
+    "content_fr": "<p>La sécurité de vos données est notre priorité absolue. C'est pourquoi notre service <strong>Smart Wise Cloud Hosting</strong> basé sur Nextcloud intègre désormais un chiffrement de bout en bout optionnel pour vos fichiers les plus sensibles. De plus, nous avons renforcé nos infrastructures contre les menaces DDoS et mis en place une authentification à deux facteurs (2FA) plus robuste pour tous les comptes.</p>",
+    "content_en": "<p>The security of your data is our top priority. That's why our <strong>Smart Wise Cloud Hosting</strong> service based on Nextcloud now includes optional end-to-end encryption for your most sensitive files. Additionally, we have strengthened our infrastructure against DDoS threats and implemented more robust two-factor authentication (2FA) for all accounts.</p>"
+  }
+  
+ 
+]

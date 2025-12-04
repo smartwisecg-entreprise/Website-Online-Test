@@ -1,0 +1,2846 @@
+/* --- START OF FILE style.css --- */
+
+/* General Styles */
+:root {
+    --primary-color: #4e7994;
+    --secondary-color: #f0f4f8;
+    --text-color: #333;
+    --light-text-color: #666;
+    --white: #fff;
+    --border-color: #e0e0e0;
+    --glow-color: #4e7994; /* Un rouge-rose vibrant */
+    --animation-line-duration: 1.2s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Sulphur Point', sans-serif;
+    color: var(--text-color);
+    background-color: var(--white);
+    font-size: 16px; /* Base font size */
+    
+}
+
+/* Ajout d'une classe pour bloquer le scroll quand le menu mobile est ouvert */
+/* Cette classe doit être ajoutée/retirée du <body> via JavaScript */
+body.body-nav-open {
+    overflow: hidden;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header & Nav */
+header {
+    background: var(--white);
+    padding: 0px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- ANCIEN STYLE DU LOGO (désactivé) --- */
+/*
+.logo img {
+    height: 110px;
+    display: block;
+     transform: scale(1.5);
+}
+*/
+
+/* ======================================= */
+/* === NOUVEAUX STYLES POUR LE LOGO ANIMÉ === */
+/* ======================================= */
+.logo-link {
+    display: block;
+    position: relative;
+    height: 110px; /* Hauteur de l'ancien logo pour ne pas casser le layout */
+    width: 250px; /* Largeur approximative pour le texte + spirale */
+}
+
+.logo-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.5); /* On garde le scale ici */
+    transform-origin: left center; /* L'agrandissement se fait depuis la gauche */
+    transition: transform 0.3s ease;
+}
+
+.logo-spirale, .logo-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: contain; /* Assure que les images ne sont pas déformées */
+    will-change: transform, opacity; /* Optimisation pour l'animation */
+}
+
+.logo-spirale {
+  
+    left: 0;
+    height: 70px; /* <--- MODIFIEZ CECI POUR LA TAILLE */
+    width: 70px;  /* <--- ET CECI AUSSI (gardez-les identiques) */
+    z-index: 10;
+    top: 20px;
+    transform: scale(0.8);
+}
+
+
+.logo-text {
+    /* Le texte est décalé pour apparaître à droite de la spirale */
+    transform: translateX(80px) translateY(4px) scale(0.4); /* Ajustez cette valeur si nécessaire */
+    z-index: 5; /* Le texte est en dessous de la spirale */
+    left: -80px; 
+    
+
+}
+/* ======================================= */
+/* === FIN DES NOUVEAUX STYLES DE LOGO === */
+/* ======================================= */
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 8px; /* Added padding for better hover effect */
+}
+
+nav ul li a::after {
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0; /* Adjusted position */
+    width:0;
+    height:2px;
+    background:var(--primary-color);
+    transition:width .25s ease;
+}
+
+nav ul li a:hover::after, nav ul li a.active::after {
+    width:100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.mobile-menu-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.mobile-menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.mobile-menu-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* General Section Styling */
+section {
+    padding: 80px 0;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.5rem; }
+
+h1, h2 {
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* Hero Section */
+.hero {
+    color: var(--white);
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.hero-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* C'est la propriété clé pour que la vidéo couvre tout l'espace */
+   
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+    animation: floatY 3s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@keyframes floatY {
+    from { transform: translateY(-15px); }
+    to { transform: translateY(15px); }
+}
+
+/* How it works / Steps Section */
+.how-it-works, .nextcloud-features {
+    text-align: center;
+}
+
+.how-it-works h2, .nextcloud-features h2 {
+    margin-bottom: 50px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.step {
+    flex: 1;
+}
+
+.step img {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: var(--light-text-color);
+}
+
+/* Features Section */
+.features {
+    background-color: var(--secondary-color);
+    overflow-x: hidden; /* AJOUT IMPORTANT pour l'animation */
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.feature:last-child {
+    margin-bottom: 0;
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-image {
+    flex: 1; /* Give flex basis to image container */
+    text-align: center;
+}
+
+.feature-image img {
+    max-width: 100%;
+    max-height: 350px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover .feature-image img {
+    transform: scale(1.03); /* Agrandit légèrement l'image */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); /* Rend l'ombre plus prononcée */
+}
+
+.feature-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.feature-text p {
+    color: var(--light-text-color);
+    line-height: 1.6;
+}
+
+/* Pricing Section */
+.pricing {
+    text-align: center;
+}
+
+.pricing h2 {
+    margin-bottom: 50px;
+}
+
+.pricing-tiers {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow tiers to wrap if needed */
+}
+
+.tier {
+    flex: 1;
+    min-width: 280px; /* Minimum width before wrapping */
+    max-width: 350px;
+    padding: 40px 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.tier:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.tier img {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.tier h3 {
+    margin-bottom: 15px;
+}
+
+.tier p {
+    color: var(--light-text-color);
+}
+
+/* Download Section */
+.download {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+}
+
+.download h2 {
+    margin-bottom: 15px;
+}
+
+.download p {
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.app-badges {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow badges to wrap */
+}
+
+.app-badges a {
+    transition: transform 0.3s ease;
+}
+
+.app-badges a:hover {
+    transform: scale(1.05);
+}
+
+.app-badges img {
+    height: 50px;
+}
+
+/* =================================== */
+/*   FOOTER - VERSION SYMÉTRIQUE FINALE  */
+/* =================================== */
+footer {
+    background-color: #121212;
+    color: #b0b0b0;
+    padding: 80px 0 40px;
+    font-size: 0.95rem;
+    border-top: 1px solid #252525;
+}
+
+/* Grille à 2 colonnes pour une symétrie parfaite et responsive */
+/* Nouveau code */
+.footer-grid {
+    display: flex;             /* On passe de Grid à Flexbox */
+    justify-content: flex-start; /* On aligne les éléments au début (à gauche) */
+    flex-wrap: wrap;           /* Permet aux colonnes de passer à la ligne sur mobile */
+    gap: 60px;                 /* On conserve l'espacement */
+    margin-bottom: 70px;
+}
+.footer-column h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-column h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 35px;
+    background-color: var(--primary-color);
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 16px;
+}
+
+.footer-column a {
+    color: #b0b0b0;
+    transition: all 0.25s ease-out;
+    display: inline-block;
+}
+
+.footer-column a:hover {
+    color: var(--primary-color);
+    transform: translateX(6px);
+}
+
+.footer-contact-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    color: #b0b0b0;
+}
+
+.footer-contact-info .icon {
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+    filter: invert(80%) sepia(0%) saturate(400%) hue-rotate(180deg) brightness(90%) contrast(90%);
+    flex-shrink: 0;
+}
+
+/* Partie basse du footer, centrée */
+.footer-bottom {
+    padding-top: 40px;
+    border-top: 1px solid #2a2a2a;
+    text-align: center;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.footer-social a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.15) translateY(-3px);
+}
+
+.footer-social img {
+    width: 26px;
+    height: 26px;
+    opacity: 0.7;
+}
+
+.footer-copyright {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #777;
+    letter-spacing: 0.5px;
+}
+
+
+/* --- HOMEPAGE STYLES --- */
+/* ================================================================ */
+/* === CORRECTIF FINAL ET DÉFINITIF POUR LE CENTRAGE DU HERO    === */
+/* ================================================================ */
+
+/* ================================================================ */
+/* === STYLES POUR LE DIAPORAMA HERO (À AJOUTER/MODIFIER) === */
+/* ================================================================ */
+
+/* --- ÉTAPE 1 : On modifie le conteneur principal --- */
+.home-hero {
+    position: relative; /* Indispensable pour positionner le diaporama en arrière-plan */
+    min-height: 100vh; /* On s'assure qu'il prend toute la hauteur de l'écran */
+    color: var(--white);
+    text-align: center;
+    display: flex; /* On garde flex pour centrer verticalement le contenu */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Empêche tout débordement */
+
+    /* On retire les anciennes propriétés de fond */
+    /* background-image: url('images/Index_Hero_Background.webp'); */
+    /* background-size: cover; */
+    /* background-position: 47% 50%; */
+}
+
+/* --- ÉTAPE 2 : On positionne le diaporama en fond --- */
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Le plus bas pour être en arrière-plan */
+}
+
+.hero-slideshow .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image couvre tout l'espace sans se déformer */
+}
+
+/* --- ÉTAPE 3 : On ajoute une surcouche sombre pour la lisibilité --- */
+.hero-slideshow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Ajustez l'opacité (0.4) selon vos images */
+    z-index: 2;
+}
+
+/* --- ÉTAPE 4 : On s'assure que le contenu est au-dessus de tout --- */
+.home-hero .container {
+    position: relative; /* Changé de 'absolute' à 'relative' pour simplifier */
+    z-index: 3; /* Le plus haut pour être au-dessus du diaporama et de la surcouche */
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* ================================================================ */
+/* === FIN DES STYLES POUR LE DIAPORAMA === */
+/* ================================================================ */
+
+/* ... (Le reste de votre CSS reste inchangé, y compris les anciennes règles pour .home-hero .container que vous pourriez avoir) ... */
+/* NOTE : J'ai simplifié la règle pour .home-hero .container. Si vous aviez des positionnements spécifiques avec top/left/transform, il faudra les ajuster, mais cette version avec flexbox est plus robuste. */
+/* ================================================================ */
+/* === STYLES POUR LES BARRES DE PROGRESSION (À AJOUTER) === */
+/* ================================================================ */
+
+/* Conteneur principal des barres */
+
+/* === NOUVELLE RÈGLE AMÉLIORÉE POUR LA PAGINATION === */
+.hero-progress-pagination {
+    position: absolute;     /* Positionne par rapport au parent (.home-hero) */
+    bottom: 30px;           /* Le place à 30px du bas */
+    
+    /* C'est la nouvelle technique de centrage : */
+    left: 0;                /* Aligne le bord gauche sur le bord gauche du parent */
+    right: 0;               /* Aligne le bord droit sur le bord droit du parent */
+    margin-left: auto;      /* Marge automatique à gauche */
+    margin-right: auto;     /* Marge automatique à droite (le navigateur centre l'élément) */
+
+    /* On définit la largeur de notre conteneur de barres : */
+    width: 90%;             /* Utilise 90% de la largeur de l'écran sur mobile */
+    max-width: 400px;       /* Mais ne dépasse jamais 400px de large */
+
+    /* Le reste ne change pas : */
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+    
+    /* IMPORTANT : On supprime ces deux lignes de l'ancienne règle */
+    /* transform: translateX(-50%); */ /* <- SUPPRIMER */
+}
+/* Ajout pour forcer la largeur et éviter l'écrasement par Swiper */
+.swiper-pagination-horizontal {
+    width: 90% !important;
+    max-width: 400px !important;
+}
+
+/* Chaque barre (l'arrière-plan) */
+.hero-progress-pagination .swiper-pagination-bullet {
+    flex: 1; /* Pour que les barres se partagent l'espace équitablement */
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+    cursor: pointer;
+    /* On retire les styles par défaut de swiper */
+    margin: 0 !important;
+    width: auto !important;
+    opacity: 1 !important;
+}
+
+/* La barre de progression (le remplissage) */
+.hero-progress-pagination .swiper-pagination-bullet .progress-fill {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: var(--white);
+    transform: scaleX(0); /* Commence vide */
+    transform-origin: left;
+    transition: transform 0.1s linear; /* Pour une transition douce si on navigue */
+}
+
+/* Animation pour la barre active */
+.hero-progress-pagination .swiper-pagination-bullet-active .progress-fill {
+    transform: scaleX(1);
+    /* L'animation se fait sur la durée de la diapositive */
+    transition: transform 5s linear; /* Doit correspondre au 'delay' de l'autoplay */
+}
+.services-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 40px;
+}
+
+.service-card {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.service-card img {
+    max-height: 200px;
+    margin-bottom: 20px;
+    object-fit: contain; /* Ensure image fits well */
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--light-text-color);
+    margin-bottom: 25px;
+    flex-grow: 1; /* Push button to bottom */
+}
+
+.service-card .btn {
+    display: block;
+}
+
+/* --- NEXTCLOUD PAGE STYLES --- */
+
+
+
+.nextcloud-hero .hero-text h1,
+.nextcloud-hero .hero-text p,
+.nextcloud-hero .hero-content {
+    color: var(--white);
+}
+
+.nextcloud-features {
+    background: var(--white);
+}
+
+.nextcloud-pricing .tier {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.nextcloud-pricing .tier .btn {
+    margin-top: auto;
+    text-align: center;
+}
+
+.nextcloud-pricing .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.nextcloud-pricing .price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--light-text-color);
+}
+
+.nextcloud-pricing ul {
+    list-style: none;
+    margin-bottom: 30px;
+    padding-left: 0;
+}
+
+.nextcloud-pricing ul li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.nextcloud-pricing ul li::before {
+    content: '✔';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.nextcloud-pricing .tier.popular {
+    border-color: var(--primary-color);
+    position: relative;
+    border-width: 2px;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =================================== */
+/* === RESPONSIVE MEDIA QUERIES === */
+/* =================================== */
+
+/* For Tablets (up to 992px) */
+@media (max-width: 992px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2.2rem; }
+    section { padding: 60px 0; }
+
+    .mobile-menu-toggle { display: block; }
+    
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 51%;
+        max-width: 250px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        gap: 40px;
+        padding-top: 100px;
+        border-left: 3px solid var(--primary-color);
+        
+    }
+
+    nav ul.nav-open { right: 0; }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .hero-buttons { justify-content: center; }
+    .feature { gap: 30px; }
+}
+
+/* For Mobile Phones (up to 768px) */
+@media (max-width: 768px) {
+     .geschool-hero .hero-background img {
+        /* On cache l'image de fond pour ordinateur */
+        display: none; 
+    }
+
+    .geschool-hero {
+        /* On applique la nouvelle image de fond pour mobile */
+        background-image: url('images/Geschool_Hero_Backgroung_for_mobile.webp'); /* Vérifiez le chemin de l'image */
+        background-size: cover;
+        background-position: center;
+    }
+       
+    body { font-size: 15px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+    section { padding: 50px 0; }
+
+    .steps,
+    .pricing-tiers {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tier {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature:nth-child(even) {
+        flex-direction: column;
+    }
+    .feature.geschool-feature:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+    
+
+    .feature-image { margin-bottom: 20px; }
+    .services-grid { grid-template-columns: 1fr; }
+
+    /* === MODIFICATION START: FOOTER RESPONSIVE FIX === */
+    .footer-content {
+        flex-direction: column;
+        /* Remplacer align-items par text-align pour un centrage plus propre du contenu interne */
+        text-align: center; 
+        gap: 40px; /* Augmenter l'espace vertical entre les sections */
+    }
+
+    .footer-brand, .footer-links, .footer-social {
+        /* Assure que chaque section prend toute la largeur pour que text-align: center fonctionne correctement */
+        width: 100%;
+    }
+    
+    .footer-brand p {
+        /* Les marges auto centrent le bloc, text-align centre le texte à l'intérieur */
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 15px; /* Évite que le texte ne touche les bords */
+    }
+
+    .footer-brand img {
+        /* Simplification du positionnement du logo */
+        position: static; /* Supprime le positionnement relatif qui peut causer des problèmes */
+        transform: scale(1.6); /* Ajustement de la taille pour un meilleur équilibre */
+        margin-bottom: 15px; /* Utiliser une marge pour l'espacement */
+        height: 60px;
+    }
+
+    .footer-social {
+        margin-top: 10px; /* Ajoute un peu d'espace avant les icônes sociales */
+    }
+
+    .footer-social a { 
+        margin: 0 10px; /* Espace équilibré entre les icônes */
+    }
+    
+    .service-text h3 {
+        font-size: 1.9rem;
+    }
+    /* === MODIFICATION END === */
+}
+
+/* Pour les très petits écrans (en dessous de 480px) */
+@media (max-width: 480px) {
+    .logo-link {
+        width: 180px; /* Réduction de la largeur du conteneur du logo */
+    }
+    .logo-container {
+        transform: scale(1.1); /* Réduction significative de la taille du logo */
+    }
+
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.6rem; }
+    
+    .home-hero {
+        padding: 80px 0;
+    }
+}
+
+
+.service-card-img-wide {
+    max-height: none;
+    width: 100%;
+    transform: scale(1.4);
+    margin-bottom: 30px;
+}
+
+/* --- Language Switcher --- */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.lang-switcher a {
+    padding: 5px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--light-text-color);
+    transition: background-color 0.2s, color 0.2s;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.lang-switcher a.active,
+.lang-switcher a:hover {
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+@media (max-width: 992px) {
+    .lang-switcher {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 60px; /* Espace pour le hamburger menu */
+        z-index: 1002; /* Doit être au-dessus du menu qui s'ouvre */
+    }
+    header nav .container { position: relative; }
+}
+/* --- GESCHOOL PAGE ENHANCEMENTS --- */
+
+.benefits-section {
+    padding: 80px 0;
+    background-color: var(--white);
+    overflow-x: hidden; /* AJOUT IMPORTANT pour l'animation */
+}
+.benefits-section h2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.benefit-card {
+    text-align: center;
+    padding: 30px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+.benefit-card img {
+    height: 60px;
+    margin-bottom: 20px;
+}
+.benefit-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+.benefit-card p {
+    color: var(--light-text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+#detailed-features h2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+/* --- Ligne 1111 environ --- */
+.feature {
+    position: relative; /* Nécessaire pour positionner les bandes en arrière-plan */
+    isolation: isolate; /* Empêche les conflits de superposition (z-index) */
+    padding: 80px 0;    /* On remplace la marge par du padding pour que le fond s'applique */
+    margin-bottom: 0;
+}
+.feature:last-child {
+    margin-bottom: 0;
+}
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.feature-list li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: var(--light-text-color);
+}
+.feature-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* ================================================================ */
+/* === STYLES POUR LA PAGE D'ACCUEIL VERTICALE (ANIMATION INTÉGRALE) === */
+/* ================================================================ */
+
+.home-hero {
+    padding: 120px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* La classe .hidden-anim est conservée uniquement pour l'animation du Hero */
+.hidden-anim {
+    opacity: 0;
+}
+
+.services-section-vertical {
+    background-color: var(--white);
+    overflow-x: clip; 
+}
+
+.services-section-vertical h2 {
+    text-align: center;
+    padding-top: 80px;
+    margin-bottom: 80px;
+}
+
+.service-block {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 100px 0;
+    margin-bottom: 0;
+    position: relative; 
+    isolation: isolate; 
+}
+
+.service-block:nth-child(even) { 
+    flex-direction: row-reverse;
+}
+
+/* Propriétés communes pour les fonds */
+.service-block:nth-child(even)::before,
+.service-block:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    /* La transition est enlevée, GSAP gère l'animation */
+}
+
+/* On utilise des variables CSS que GSAP va pouvoir animer */
+.service-block:nth-child(even)::before {
+    background-color: var(--secondary-color);
+    clip-path: var(--clip-before, polygon(0 0, 60% 0, 40% 100%, 0% 100%)); /* Valeur par défaut */
+}
+
+.service-block:nth-child(even)::after {
+    background-color: var(--secondary-color);
+    mask-image: radial-gradient(black 50%, transparent 50%);
+    -webkit-mask-image: radial-gradient(black 50%, transparent 50%);
+    mask-size: 8px 8px;
+    -webkit-mask-size: 8px 8px;
+    clip-path: var(--clip-after, polygon(60% 0, 100% 0, 100% 100%, 40% 100%)); /* Valeur par défaut */
+}
+
+/* Les règles :hover sont supprimées car l'animation est gérée par le scroll via GSAP */
+
+.service-text, .service-image {
+    flex: 1;
+}
+
+.service-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 10px 25px rgba(30, 90, 150, 0.1));
+}
+
+.service-text h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.service-text p {
+    color: var(--light-text-color);
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+/* Responsive (inchangé) */
+@media (max-width: 992px) {
+    .service-block,
+    .service-block:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 80px 20px;
+    }
+}
+/* --- START OF FILE style.css --- */
+
+/* ... (tout votre code CSS existant) ... */
+
+/* ================================================================ */
+/* === CSS COMPLET ET DÉTAILLÉ - PAGE CONTACT - LAYOUT À DEUX BLOCS === */
+/* ================================================================ */
+
+/* --- HERO BANNER --- */
+.contact-hero .hero-content {
+    text-align: center;
+    justify-content: center;
+}
+.contact-hero .hero-text p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- SECTION PRINCIPALE --- */
+.contact-section {
+    padding-top: 80px;
+    padding-right: 0;
+    padding-bottom: 80px;
+    padding-left: 0;
+    background-color: var(--secondary-color);
+}
+
+/* --- BLOC SUPÉRIEUR (INFO + FORM) --- */
+.contact-upper-block {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    box-shadow: 0 20px 60px -10px rgba(45, 55, 72, 0.15);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* --- PANNEAUX COMMUNS --- */
+.contact-info-panel, .contact-form-panel {
+    padding-top: 60px;
+    padding-right: 50px;
+    padding-bottom: 60px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- PANNEAU DE GAUCHE (INFO) --- */
+.contact-info-panel {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+.contact-info-panel h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+.info-panel-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.85;
+    margin-bottom: 50px;
+}
+.info-block {
+    display: flex;
+    align-items: flex-start;
+    row-gap: 0;
+    column-gap: 20px;
+    margin-bottom: 30px;
+}
+.info-icon-wrapper {
+    flex-shrink: 0;
+}
+.info-icon-wrapper .contact-icon {
+    height: 24px;
+    width: 24px;
+    filter: brightness(0) invert(1);
+}
+.info-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 5px;
+    margin-left: 0;
+    color: var(--white);
+}
+.info-content p {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    opacity: 0.8;
+}
+.info-content p a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+    transition-property: border-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.info-content p a:hover {
+    border-bottom-color: var(--white);
+}
+
+/* --- PANNEAU DE DROITE (FORMULAIRE) - Version Placeholder Uniquement --- */
+.contact-form-panel {
+    background-color: var(--white);
+}
+.contact-form-panel h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px; /* Marge augmentée pour donner de l'air */
+    color: var(--text-color);
+}
+
+.contact-form .form-group {
+    position: relative;
+    margin-bottom: 40px; /* Espacement ajusté entre les champs */
+}
+
+/* LA MODIFICATION LA PLUS IMPORTANTE : ON CACHE LE LABEL VISUELLEMENT */
+.contact-form label {
+    /* Technique standard pour cacher un élément tout en le gardant accessible */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 0;
+    padding-right: 0;
+    border-width: 0;
+    border-style: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--border-color);
+    background-color: transparent;
+    font-size: 1rem;
+    outline-style: none;
+    position: relative;
+    z-index: 1;
+}
+
+/* Style pour le texte temporaire grisé */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #a0a0a0;
+    opacity: 1;
+}
+
+.contact-form textarea {
+    resize: none;
+    min-height: 80px;
+}
+
+/* La ligne animée est conservée */
+.contact-form .form-group::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    z-index: 2;
+}
+.contact-form .form-group.focus::after {
+    transform: scaleX(1);
+}
+
+/* Le style du bouton ne change pas */
+.contact-form button {
+    display: inline-block;
+    width: auto;
+    padding-top: 14px;
+    padding-right: 40px;
+    padding-bottom: 14px;
+    padding-left: 40px;
+    font-size: 1rem;
+}
+
+/* --- BLOC INFÉRIEUR (CARTE) --- */
+.contact-map-block {
+    margin-top: 40px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    box-shadow: 0 20px 60px -10px rgba(45, 55, 72, 0.15);
+    line-height: 0;
+}
+
+.contact-map-block iframe {
+    width: 100%;
+    height: 450px;
+    border-width: 0;
+    border-style: none;
+}
+
+/* --- RESPONSIVE POUR LA PAGE CONTACT --- */
+@media (max-width: 992px) {
+    .contact-section {
+        padding-top: 40px;
+        padding-right: 0;
+        padding-bottom: 40px;
+        padding-left: 0;
+    }
+    .contact-upper-block {
+        grid-template-columns: 1fr;
+    }
+    .contact-info-panel, .contact-form-panel {
+        padding-top: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        padding-left: 40px;
+    }
+    .contact-map-block {
+        margin-top: 30px;
+    }
+}
+/* ================================================================ */
+/* === STYLES SPÉCIFIQUES POUR LA PAGE VTC === */
+/* ================================================================ */
+
+
+
+/* On peut aussi directement limiter la taille de l'image à l'intérieur */
+.vtc-hero .hero-image img {
+    max-width: 300px; /* Ajustez cette valeur pour rendre l'image plus petite ou plus grande */
+    /* L'animation floatY est déjà appliquée, pas besoin de la réécrire */
+}
+/* --- START OF ADDITION --- */
+
+/* ================================================================ */
+/* === VOITURE ANIMÉE AU SCROLL POUR LA PAGE VTC === */
+/* ================================================================ */
+
+.scroll-car-container {
+    position: fixed;
+    /* Position sur le côté droit de l'écran. Ajustez si besoin. */
+    right: 30px; 
+    top: 0;
+    /* Assurez-vous qu'elle soit au-dessus des autres contenus */
+    z-index: 999; 
+    /* Dimensions du conteneur. L'image s'adaptera. */
+    width: 70px; 
+    /* Empêche l'élément de capter les clics de souris */
+    pointer-events: none; 
+}
+
+.scroll-car-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease-out; /* Ajoute une transition douce pour le retournement */
+}
+
+/* On cache la voiture sur les écrans mobiles pour ne pas surcharger l'interface */
+@media (max-width: 768px) {
+   .scroll-car-container {
+        /* On réduit sa taille pour qu'elle soit moins intrusive */
+        width: 45px; 
+        
+        /* On la rapproche un peu du bord de l'écran */
+        right: 15px; 
+    }
+}
+
+/* --- END OF ADDITION --- */
+
+/* ================================================================ */
+/* ===         STYLES SPÉCIFIQUES POUR LA PAGE À PROPOS         === */
+/* ================================================================ */
+
+/* --- Variables de couleur (à adapter à votre charte) --- */
+
+/* --- Section Hero --- */
+.about-hero {
+    position: relative;
+    color: var(--white-color);
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero .hero-background img {
+    filter: brightness(0.5); /* Assombrit l'image pour la lisibilité du texte */
+}
+
+.about-hero .hero-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-hero h1 {
+    font-size: clamp(2.5em, 8vw, 4.5em);
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero p {
+    font-size: clamp(1.1em, 2.5vw, 1.3em);
+    line-height: 1.6;
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+/* --- Structure générale des sections --- */
+.story-section, .values-section, .commitment-section, .cta-section {
+    padding: 100px 20px;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+.section-header h2 {
+    font-size: clamp(2.2em, 7vw, 3.2em);
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* --- Section Histoire --- */
+.story-section {
+    background: var(--white-color);
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.story-text h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+}
+
+.story-text p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+/* --- Section Valeurs --- */
+.values-section {
+    background: var(--light-gray);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.value-card {
+    background: var(--white-color);
+    padding: 40px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.value-icon {
+  width: 100px; /* Augmentation de la largeur */
+  height: 100px; /* Augmentation de la hauteur */
+  margin-bottom: 25px;
+  border-radius: 50%; /* Ajout pour un cercle parfait */
+  object-fit: cover;  /* Assure que l'image de l'icône remplit bien le cercle */
+}
+
+.value-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.value-card p {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* --- Section Engagement --- */
+.commitment-section {
+    background: var(--white-color);
+}
+
+.commitment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.commitment-card {
+    background: var(--light-gray); /* Léger fond pour se démarquer */
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Alignement à gauche pour un look plus "corporate" */
+}
+
+.commitment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.commitment-icon {
+  display: block; /* Ajout pour permettre l'utilisation des marges automatiques */
+  margin: 0 auto 25px auto; /* Centre l'icône et conserve la marge inférieure */
+  width: 100px; 
+  height: 100px;
+  /* L'ancienne 'margin-bottom: 25px;' est maintenant incluse dans la ligne 'margin' */
+  border-radius: 50%; 
+  object-fit: cover;  
+}
+
+.commitment-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.commitment-card p {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+
+/* --- Section CTA --- */
+.cta-section {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    text-align: center;
+}
+
+.cta-section .container {
+    max-width: 800px;
+}
+
+.cta-section h2 {
+    color: var(--white-color);
+    font-size: clamp(2em, 6vw, 2.8em);
+}
+.cta-section p {
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.btn.btn-primary { 
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+
+/* --- Media Queries pour le Responsive --- */
+@media (max-width: 992px) {
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .story-image {
+        order: -1; /* Met l'image en premier sur mobile */
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .story-text {
+        text-align: center;
+    }
+}
+
+/* ======================================= */
+/* === STYLES POUR LE MENU DÉROULANT (Corrigé) === */
+/* ======================================= */
+
+/* Style le conteneur du menu déroulant (le 'li') */
+nav .nav-links li.dropdown {
+    position: relative;
+}
+
+/* Style la petite flèche vers le bas */
+.arrow-down {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 8px;
+    vertical-align: middle;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+    transition: transform 0.3s ease;
+}
+
+/* ======================================================== */
+/* === RÈGLES DE ROTATION DE LA FLÈCHE (VERSION FINALE) === */
+/* ======================================================== */
+
+/* Règle N°1 : Fait tourner la flèche si le sous-menu est ouvert via la classe JS. */
+/* Cette règle s'applique sur TOUS les appareils (mobile et desktop). */
+nav .nav-links li.dropdown.submenu-open > a .arrow-down {
+    transform: rotate(180deg);
+}
+
+/* Règle N°2 : Ajoute la rotation au survol, MAIS UNIQUEMENT sur les écrans larges. */
+/* Cela empêche le "hover collant" sur les appareils tactiles. */
+@media (min-width: 992px) {
+    nav .nav-links li.dropdown:hover > a .arrow-down {
+        transform: rotate(180deg);
+    }
+}
+
+/* Le menu déroulant lui-même */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; /* Alignement à gauche par défaut */
+    right: auto;
+    background-color: var(--white);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    list-style: none;
+    min-width: 250px;
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+     border: none;
+    
+}
+
+/* --- LOGIQUE D'AFFICHAGE --- */
+
+/* 1. AFFICHE LE SOUS-MENU AU CLIC (via JS) pour mobile */
+/* La classe .submenu-open est ajoutée/retirée par notre JavaScript */
+nav .nav-links li.dropdown.submenu-open > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 2. AFFICHE LE SOUS-MENU AU SURVOL pour desktop */
+/* On utilise une media query pour que le :hover ne s'applique que sur grand écran */
+@media (min-width: 992px) { /* Ajustez ce point de rupture à celui de votre menu mobile */
+    nav .nav-links li.dropdown:hover > .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Style des liens dans le menu déroulant */
+.dropdown-menu li a {
+   padding: 12px 20px;
+    display: flex; /* <-- MODIFICATION IMPORTANTE */
+    align-items: center; /* <-- AJOUT : pour centrer verticalement */
+    color: var(--text-color);
+    white-space: nowrap;
+    flex-wrap: nowrap;
+}
+/* Style pour la nouvelle icône */
+.dropdown-icon {
+    width: 20px; /* Ajustez la taille si besoin */
+    height: 20px;
+    margin-right: 12px; /* Espace entre l'icône et le texte */
+    object-fit: contain; /* S'assure que l'icône n'est pas déformée */
+    
+}
+/* Annule l'effet de soulignement */
+.dropdown-menu li a::after {
+    display: none;
+}
+
+/* Change la couleur de fond au survol */
+.dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+    color: var(--primary-color);
+}
+
+/* Sur mobile, le sous-menu ne doit pas être en position absolue */
+@media (max-width: 991px) { /* Doit correspondre à la media query inverse ci-dessus */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0 0 0 20px; /* Indentation pour montrer que c'est un sous-menu */
+        min-width: auto;
+        opacity: 1;
+        transform: none;
+        transition: none;
+        background-color: transparent;
+    }
+    .dropdown-menu li a {
+        color: var(--white); /* ou la couleur de vos liens de menu mobile */
+        padding: 10px 15px;
+    }
+    .dropdown-menu li a:hover {
+        background-color: rgba(255,255,255,0.1);
+    }
+}
+
+/* ================================================================ */
+/* === AMÉLIORATIONS DYNAMIQUES POUR LA PAGE CONTACT === */
+/* ================================================================ */
+
+/* --- Effets sur les champs du formulaire --- */
+.contact-form .form-group {
+    position: relative; /* Nécessaire pour le positionnement du label animé */
+}
+
+/* Style de base pour les champs de formulaire */
+.contact-form input,
+.contact-form textarea {
+    background-color: #f9fafb; /* Un fond légèrement différent pour ressortir */
+    border: 2px solid var(--border-color);
+    border-radius: 8px; /* Bords légèrement plus arrondis */
+}
+
+/* Animation à la sélection (focus) */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+    background-color: var(--white);
+}
+
+/* --- Bouton d'envoi dynamique --- */
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden; /* Cache les éléments qui dépassent lors de l'animation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+
+/* --- Informations de contact interactives --- */
+.contact-info-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid transparent;
+}
+
+.contact-info-item:hover {
+    transform: translateY(-5px);
+    background-color: var(--white);
+    border-color: var(--border-color);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+}
+
+.contact-icon {
+    transition: transform 0.3s ease;
+}
+
+.contact-info-item:hover .contact-icon {
+    transform: scale(1.15) rotate(-10deg);
+}
+
+/* --- Carte interactive --- */
+.map-container iframe {
+    transition: box-shadow 0.3s ease;
+}
+
+.map-container iframe:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* ================================================================ */
+/* === BANDES COLORÉES POUR LA SECTION "DETAILED FEATURES" (GESCHOOL) === */
+/* ================================================================ */
+
+/* On s'assure que la section parente peut contenir les fonds qui dépassent */
+#detailed-features {
+    overflow-x: clip; /* Empêche le débordement horizontal */
+}
+
+/* Propriétés communes pour les fonds en bande */
+#detailed-features .feature:nth-child(even) {
+    position: relative;
+    isolation: isolate;
+    padding: 80px 0;
+    margin-bottom: 0;
+}
+
+#detailed-features .feature:nth-child(even)::before,
+#detailed-features .feature:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* On applique les variables CSS animables par GSAP */
+#detailed-features .feature:nth-child(even)::before {
+    clip-path: var(--clip-before, polygon(0 0, 60% 0, 40% 100%, 0% 100%)); /* Valeur par défaut */
+}
+
+#detailed-features .feature:nth-child(even)::after {
+    /* On ajoute l'effet de pointillé avec un masque radial */
+    mask-image: radial-gradient(black 50%, transparent 50%);
+    -webkit-mask-image: radial-gradient(black 50%, transparent 50%);
+    mask-size: 8px 8px;
+    -webkit-mask-size: 8px 8px;
+    clip-path: var(--clip-after, polygon(60% 0, 100% 0, 100% 100%, 40% 100%)); /* Valeur par défaut */
+}
+
+
+/*
+ *  Application du cycle de couleurs VERT -> JAUNE -> ROUGE
+ *  (Ce bloc reste inchangé)
+*/
+
+/* Couleur VERTE */
+#detailed-features .feature:nth-child(6n + 2)::before,
+#detailed-features .feature:nth-child(6n + 2)::after {
+    background-color: #e8f5e9; /* Un vert pastel très clair */
+}
+
+/* Couleur JAUNE */
+#detailed-features .feature:nth-child(6n + 4)::before,
+#detailed-features .feature:nth-child(6n + 4)::after {
+    background-color: #fffde7; /* Un jaune pastel très clair */
+}
+
+/* Couleur ROUGE */
+#detailed-features .feature:nth-child(6n)::before,
+#detailed-features .feature:nth-child(6n)::after {
+    background-color: #ffebee; /* Un rouge pastel très clair */
+}
+
+
+
+/* --- START OF FILE style.css --- */
+
+/* ... (tout votre code CSS existant jusqu'à la section de l'effet "WOW") ... */
+
+
+/* ================================================================ */
+/* === "WOW" EFFECT FOR ALL HERO TITLES (GENERALIZED) - V6      === */
+/* ================================================================ */
+
+/* --- 1. Style de Base Commun à TOUS les titres H1 --- */
+/* On applique ici uniquement les styles qui ne changent jamais */
+.home-hero h1,
+.contact-hero h1,
+.about-hero h1,
+.geschool-hero h1,
+.vtc-hero h1,
+.nextcloud-hero h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+
+    /* Effet de lueur partagé */
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.7),
+        0 0 15px rgba(255, 255, 255, 0.5),
+        0 0 30px rgba(78, 121, 148, 0.8),
+        0 0 50px rgba(78, 121, 148, 0.6);
+}
+
+/* --- 2. Styles de Base pour les SPAN (les mots) --- */
+.home-hero h1 span,
+.contact-hero h1 span,
+.about-hero h1 span,
+.geschool-hero h1 span,
+.vtc-hero h1 span,
+.nextcloud-hero h1 span {
+    display: inline-block;
+    line-height: 1.1;
+    padding: 0 5px; /* Ajoute un peu d'espace pour que les mots respirent */
+}
+
+/* ================================================================ */
+/* === AJUSTEMENTS SPÉCIFIQUES PAR PAGE                          === */
+/* ================================================================ */
+
+/* --- A. Page d'Accueil (Le modèle qui fonctionne) --- */
+.home-hero h1 {
+    flex-direction: column; /* Reste en colonne sur mobile */
+}
+.home-hero h1 span {
+    font-size: clamp(3rem, 10vw, 6rem);
+}
+/* Style optionnel pour le '&' */
+.home-hero h1 .hero-ampersand {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+}
+@media (min-width: 768px) {
+    .home-hero h1 {
+        flex-direction: row; /* Passe en ligne sur desktop */
+        gap: 25px;
+    }
+}
+
+
+/* --- B. Page VTC (Titre long, police plus petite) --- */
+.vtc-hero h1 {
+    flex-direction: column; /* On le garde en colonne pour une meilleure lisibilité */
+    gap: 10px;
+}
+.vtc-hero h1 span {
+    /* Police beaucoup plus petite pour s'adapter au long titre */
+    font-size: clamp(1.8rem, 5.5vw, 3.5rem); 
+    letter-spacing: 2px;
+}
+
+
+/* --- C. Pages About, Geschool, Nextcloud (Titres sur 2 lignes) --- */
+.about-hero h1,
+.geschool-hero h1,
+.nextcloud-hero h1 {
+    flex-direction: column; /* On force l'affichage en colonne même sur desktop */
+    gap: 10px;
+}
+.about-hero h1 span,
+.geschool-hero h1 span,
+.nextcloud-hero h1 span {
+    /* Taille de police intermédiaire, adaptée pour deux lignes */
+    font-size: clamp(2.2rem, 8vw, 4.5rem);
+}
+
+/* --- D. Page Contact (Titre court, peut rester large) --- */
+.contact-hero h1 {
+    flex-direction: column;
+}
+.contact-hero h1 span {
+    /* Similaire à la page d'accueil mais un peu réduit */
+    font-size: clamp(2.5rem, 9vw, 5rem);
+}
+@media (min-width: 768px) {
+    .contact-hero h1 {
+        flex-direction: row; /* Passe en ligne sur desktop */
+        gap: 20px;
+    }
+}
+
+/* ================================================================ */
+/* === AJUSTEMENTS CORRECTIFS POUR TRÈS PETITS ÉCRANS (<= 380px) === */
+/* ================================================================ */
+
+@media (max-width: 380px) {
+
+    /* --- Mesure de sécurité pour empêcher tout débordement horizontal --- */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* --- 1. Réduction du padding général --- */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* --- 2. Correction critique du logo pour éviter le débordement --- */
+    .logo-link {
+        /* On réduit la largeur du conteneur pour qu'il ne pousse pas les autres éléments */
+        width: 180px; 
+    }
+    .logo-container {
+        /* On réduit drastiquement le zoom pour qu'il rentre dans le conteneur */
+        transform: scale(1); 
+    }
+
+    /* --- 3. Ajustement des titres "Hero" --- */
+    .home-hero h1,
+    .contact-hero h1,
+    .about-hero h1,
+    .geschool-hero h1,
+    .vtc-hero h1,
+    .nextcloud-hero h1 {
+        letter-spacing: 2px;
+        gap: 10px;
+    }
+
+    .home-hero h1 span,
+    .contact-hero h1 span,
+    .about-hero h1 span,
+    .geschool-hero h1 span,
+    .nextcloud-hero h1 span {
+        font-size: clamp(2rem, 10vw, 3.5rem); 
+    }
+    
+    .vtc-hero h1 span {
+        font-size: clamp(1.6rem, 5vw, 2.2rem);
+    }
+
+    /* --- 4. Correction de la page Contact --- */
+    .contact-info-panel, 
+    .contact-form-panel {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .contact-form-panel h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .contact-form .form-group {
+        margin-bottom: 30px;
+    }
+
+    /* --- 5. Ajustement des services --- */
+    .service-text h3 {
+        font-size: 1.8rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+    }
+
+    /* --- 7. Correction du centrage des cartes (Valeurs & Engagement) --- */
+    .values-grid,
+    .commitment-grid {
+        /* On réduit la largeur minimale des cartes pour qu'elles rentrent sans forcer */
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+
+}
+/* ================================================================= */
+/* === CORRECTIF FINAL - ALIGNEMENT À GAUCHE DU MENU MOBILE COMPLET === */
+/* ================================================================= */
+
+@media (max-width: 992px) {
+
+    /* --- 1. On modifie le conteneur principal du menu --- */
+    nav ul {
+        /* LA MODIFICATION CLÉ : On aligne tous les éléments à gauche */
+        align-items: flex-start; 
+        
+        /* On ajoute une marge à gauche pour que ce ne soit pas collé au bord */
+        padding-left: 30px; 
+    }
+
+    /* On s'assure que le conteneur du sous-menu prend toute la largeur */
+    nav ul li.dropdown {
+        width: 100%;
+        /* On retire text-align: center car l'alignement est maintenant géré par le conteneur */
+    }
+    
+    /* --- 2. On ajuste le sous-menu pour qu'il suive la même logique --- */
+    .dropdown-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        transform: none;
+        opacity: 1;
+        border-radius: 0;
+        width: 100%;
+        min-width: 0;
+        background-color: rgba(78, 121, 148, 0.05);
+        padding: 10px 0;
+        margin-top: 10px;
+    }
+
+    /* On aligne les liens du sous-menu à gauche avec une indentation */
+    .dropdown-menu li a {
+        white-space: normal;
+        /* On passe l'alignement à gauche pour être cohérent */
+        text-align: left;
+        
+        /* On crée une indentation pour marquer la hiérarchie */
+        padding-left: 15px; 
+        
+        font-size: 0.9em;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: var(--primary-color);
+    }
+    
+    .dropdown-menu li a:hover {
+        background-color: transparent;
+    }
+}
+/* ================================================================ */
+/* === STYLES SPÉCIFIQUES POUR LA PAGE ACTUALITÉS (NEWS) === */
+/* ================================================================ */
+
+/* --- Section des contrôles (Filtres & Recherche) --- */
+.news-controls {
+    padding: 40px 0;
+    background-color: var(--secondary-color);
+}
+
+.news-controls .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--white);
+    color: var(--text-color);
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(78, 121, 148, 0.3);
+}
+
+.search-container input {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    min-width: 250px;
+    font-size: 1rem;
+}
+.search-container input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(78, 121, 148, 0.1);
+}
+
+/* --- Grille des articles --- */
+.news-section {
+    padding: 80px 0;
+}
+
+.news-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+    justify-content: center; /* Centre les cartes horizontalement */
+    gap: 40px;
+}
+
+.news-card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px -5px rgba(0,0,0,0.08);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translateY(30px);
+    display: flex;
+    flex-direction: column;
+    
+    /* Modifications */
+    flex-basis: 320px; /* Largeur de base de la carte */
+    flex-grow: 1; /* Permet à la carte de grandir */
+    max-width: 420px; /* Empêche la carte de devenir trop large */
+}
+
+.news-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px -5px rgba(0,0,0,0.12);
+}
+
+.card-image-container {
+    aspect-ratio: 16 / 9; /* Ratio standard pour un rendu harmonieux */
+    overflow: hidden;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.news-card:hover .card-image-container img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permet au bouton de rester en bas */
+}
+
+.card-category {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.card-date {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-bottom: 15px;
+}
+
+.card-summary {
+    color: var(--text-color);
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* --- Indicateur de chargement --- */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--secondary-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 50px auto;
+    grid-column: 1 / -1; /* Prend toute la largeur de la grille */
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* --- Styles pour la modale --- */
+.news-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+.modal-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-title {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.modal-meta {
+    margin-bottom: 25px;
+    color: var(--light-text-color);
+    font-weight: 500;
+}
+
+.modal-category {
+    color: var(--primary-color);
+}
+
+.modal-body p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+.modal-body strong {
+    color: var(--primary-color);
+}
+
+/* Responsive pour la page d'actualités */
+@media(max-width: 768px) {
+    .news-controls .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-container input {
+        width: 100%;
+        min-width: unset;
+    }
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        padding: 20px;
+        margin: 10% auto;
+    }
+    .modal-title {
+        font-size: 1.8rem;
+    }
+    .modal-img {
+        height: 200px;
+    }
+}
+/*page News Ajout*/
+ .news-card .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Styles pour l'état "aucune actualité" */
+        .empty-state-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+            color: #6c757d;
+            /* Prend toute la largeur de la grille */
+            grid-column: 1 / -1; 
+            border: 2px dashed #e0e0e0;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .empty-state-icon {
+            width: 72px;
+            height: 72px;
+            margin-bottom: 24px;
+            color: #adb5bd;
+        }
+
+        .empty-state-container h3 {
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+            color: #343a40;
+            font-weight: 600;
+        }
+        
+        .empty-state-container p {
+            font-size: 1.1rem;
+        }
+
+        /* Style pour le message "Aucun résultat" pour le différencier */
+        .search-no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1.2rem;
+            color: #495057;
+        }
+
+/* ================================================================ */
+/* === STYLES SPÉCIFIQUES POUR LA PAGE D'UN ARTICLE (TEMPLATE) === */
+/* ================================================================ */
+
+.article-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.article-section .container {
+    max-width: 800px; /* On réduit la largeur pour une meilleure lisibilité des articles longs */
+}
+
+.article-img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.article-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+    color: var(--light-text-color);
+}
+
+.article-category {
+    display: inline-block;
+    padding: 6px 15px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.article-date {
+    font-weight: 500;
+}
+
+.article-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.article-body p {
+    margin-bottom: 20px;
+}
+
+.article-body h2, .article-body h3 {
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.article-body h2 { font-size: 2rem; }
+.article-body h3 { font-size: 1.6rem; }
+
+.article-body ul {
+    list-style: disc;
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+.article-body li {
+    margin-bottom: 10px;
+}
+
+.article-body a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.article-body a:hover {
+    color: #3a5a70;
+}
+
+.article-body strong {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 50px;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.back-link:hover {
+    transform: translateX(-5px);
+}
+
+/* --- Responsive pour les articles sur mobile --- */
+@media (max-width: 768px) {
+    .article-section {
+        padding: 40px 0;
+    }
+    .article-title {
+        font-size: 2.2rem;
+    }
+    .article-body {
+        font-size: 1rem;
+    }
+}
+/* style.css */
+
+.contact-hero .hero-text p {
+    color: #FFFFFF; /* ou simplement 'white' */
+}
+
+/* ================================================================ */
+/* === PAGE BIENTÔT DISPONIBLE (CORRIGÉE & HARMONISÉE) === */
+/* ================================================================ */
+
+.coming-soon-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--secondary-color); /* Fond gris clair */
+    padding: 80px 20px;
+}
+
+.coming-soon-content {
+    max-width: 900px; /* Plus large pour accueillir les gros titres */
+    margin: 0 auto;
+}
+
+/* --- 1. L'Emoji Animé --- */
+.emoji-wrapper {
+    margin-bottom: 40px;
+    display: block;
+}
+
+.emoji-anim {
+    display: inline-block;
+    font-size: clamp(6rem, 15vw, 9rem); /* Emoji plus gros et responsive */
+    filter: drop-shadow(0 15px 30px rgba(78, 121, 148, 0.25)); 
+    animation: floatEmoji 3.5s ease-in-out infinite;
+    cursor: default;
+}
+
+@keyframes floatEmoji {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(8deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* --- 2. Le Titre (H1) - Harmonisé avec les pages HERO --- */
+.coming-soon-content h1 {
+    
+    
+    /* MÊME LOGIQUE DE TAILLE QUE VOS HEROS (Accueil/VTC/Contact) */
+    font-size: clamp(2.5rem, 8vw, 5rem); 
+    
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Espacement large typique de votre site */
+    line-height: 1.1;
+    margin-bottom: 30px;
+    
+    /* Utilise la même couleur sombre que tes titres 'About' pour la cohérence */
+    color: var(--dark-color); 
+    
+    text-shadow: 
+        0 2px 5px rgba(0,0,0,0.05),
+        0 10px 20px rgba(78, 121, 148, 0.15);
+}
+
+/* --- 3. Le Paragraphe (P) - Harmonisé avec les intros --- */
+.coming-soon-content p {
+    
+    
+    /* Taille augmentée pour correspondre aux intros (ex: hero-text p) */
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    
+    color: var(--light-text-color);
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+}
+
+/* --- 4. Bouton de retour (Optionnel mais recommandé pour le style) --- */
+.coming-soon-btn {
+    margin-top: 40px;
+    display: inline-block;
+}
+
+/* --- Responsive Mobile --- */
+@media (max-width: 768px) {
+    .coming-soon-section {
+        padding: 60px 20px;
+    }
+
+    .coming-soon-content h1 {
+        /* Ajustement mobile pour éviter les cassures de mots */
+        font-size: clamp(2rem, 10vw, 3rem); 
+        letter-spacing: 2px;
+    }
+    
+    .coming-soon-content p {
+        font-size: 1rem;
+    }
+}

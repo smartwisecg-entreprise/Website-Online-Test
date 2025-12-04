@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="meta_title_coming_soon">Bientôt Disponible - Smart Wise</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+
+    <!-- === HEADER (Identique aux autres pages) === -->
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="images/logo_spirale.png" alt="Logo Smart Wise Spirale" class="logo-spirale">
+                        <img src="images/logo_text.png" alt="Smart Wise" class="logo-text">
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                    <li><a href="about.html" data-key="nav_about">À Propos</a></li>
+                    <li class="dropdown">
+                        <a href="#">
+                            <span data-key="nav_services">Nos Services</span>
+                            <span class="arrow-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="vtc.html"><img src="images/car.png" alt="" class="dropdown-icon"><span
+                                        data-key="nav_vtc">Smart Wise VTC</span></a></li>
+                            <li><a href="nextcloud.html"><img src="images/cloud-server.png" alt=""
+                                        class="dropdown-icon"><span data-key="nav_cloud">Smart Wise Cloud
+                                        Hosting</span></a></li>
+                            <li><a href="geschool.html"><img src="images/school.png" alt="" class="dropdown-icon"><span
+                                        data-key="nav_geschool">Geschool ERP</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                    <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <a href="#" lang="fr">FR</a>
+                    <a href="#" lang="en">EN</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- === SECTION BIENTÔT DISPONIBLE === -->
+        <section class="coming-soon-section">
+            <div class="container">
+                <div class="coming-soon-content">
+                    <!-- L'Emoji Animé -->
+                    <div class="emoji-wrapper">
+                        <span class="emoji-anim">🚀</span>
+                    </div>
+
+                    <h1 data-key="coming_soon_title">Bientôt Disponible</h1>
+                    <p data-key="coming_soon_desc">Nous travaillons dur pour vous apporter cette nouveauté.<br>Restez connectés pour découvrir nos
+                        innovations.</p>
+
+                    <a href="index.html" class="btn" data-key="coming_soon_btn">Retour à l'accueil</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- === FOOTER (Identique aux autres pages) === -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h5 data-key="footer_explore_title">Explorer</h5>
+                    <ul>
+                        <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                        <li><a href="about.html" data-key="nav_about_footer">À Propos</a></li>
+                        <li><a href="vtc.html">Smart Wise VTC</a></li>
+                        <li><a href="nextcloud.html">Smart Wise Cloud</a></li>
+                        <li><a href="geschool.html">Geschool ERP</a></li>
+                        <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                        <li><a href="contact.html" data-key="nav_contact_footer">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5 data-key="footer_contact_title">Nous Joindre</h5>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <img src="images/location-icon.png" alt="Adresse" class="icon">
+                            <span data-key="footer_address">Immeuble acacia, Mpita, Pointe-Noire, Congo</span>
+                        </li>
+                        <li>
+                            <img src="images/email-icon.png" alt="Email" class="icon">
+                            <a href="mailto:contact@smartwise.cg">contact@smartwise.cg</a>
+                        </li>
+                        <li>
+                            <img src="images/phone-icon.png" alt="Téléphone" class="icon">
+                            <a href="tel:+242056600459">05 660 04 59</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" title="Facebook"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="#" title="Instagram"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                </div>
+                <p class="footer-copyright" data-key="footer_copyright">&copy; 2025 Smart Wise. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="translations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

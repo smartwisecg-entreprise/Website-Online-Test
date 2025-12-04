@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="meta_title_about">À Propos - Notre Vision chez Smart Wise</title>
+
+    <!-- CSS Principal de votre site -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS Spécifique pour cette page -->
+    <link rel="stylesheet" href="style-about.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======================= HEADER ======================= -->
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="images/logo_spirale.png" alt="Logo Smart Wise Spirale" class="logo-spirale">
+                        <img src="images/logo_text.png" alt="Smart Wise" class="logo-text">
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                    <li><a href="about.html" data-key="nav_about">À Propos</a></li>
+                    <!-- DÉBUT DU MENU DÉROULANT -->
+
+                    <li class="dropdown">
+                        <a href="#">
+                            <span data-key="nav_services">Nos Services</span>
+                            <span class="arrow-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- Lien 1 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="vtc.html">
+                                    <img src="images/car.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_vtc">Smart Wise VTC</span>
+                                </a>
+                            </li>
+                            <!-- Lien 2 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="nextcloud.html">
+                                    <img src="images/cloud-server.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_cloud">Smart Wise Cloud Hosting</span>
+                                </a>
+                            </li>
+                            <!-- Lien 3 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="geschool.html">
+                                    <img src="images/school.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_geschool">Geschool ERP</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- FIN DU MENU DÉROULANT -->
+                    <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                    <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <a href="#" lang="fr">FR</a>
+                    <a href="#" lang="en">EN</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ======================= MAIN CONTENT ======================= -->
+    <main>
+
+        <!-- === HERO SECTION (MODIFIÉE) === -->
+        <section class="hero about-hero">
+            <div class="hero-background">
+                <img src="images/about-hero-background.webp" alt="Équipe Smart Wise en réunion stratégique">
+            </div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <!-- H1 MODIFIÉ CI-DESSOUS -->
+                    <h1 class="hero-title-main">
+                        <span class="hero-line1" data-key="about_hero_line1">Nous sommes</span>
+                        <span class="hero-line2" data-key="about_hero_line2">Smart Wise.</span>
+                    </h1>
+                    <p data-key="about_hero_subtitle">Des innovateurs passionnés qui transforment des idées complexes en
+                        solutions technologiques simples, intuitives et performantes pour propulser votre croissance.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- === NOTRE HISTOIRE === -->
+        <section class="story-section">
+            <div class="container">
+                <div class="story-content">
+                    <div class="story-image">
+                        <img src="images/story-image.jpg"
+                            alt="Post-its sur un mur, symbole de brainstorming et de stratégie">
+                    </div>
+                    <div class="story-text">
+                        <h2 data-key="about_story_title">Notre Histoire</h2>
+                        <p data-key="about_story_p1">Fondée en 2020, Smart Wise est née d'une ambition simple : rendre
+                            la technologie accessible et véritablement utile. Partant du constat que de nombreuses
+                            entreprises et institutions peinaient à trouver des outils numériques adaptés à leurs
+                            réalités, nous avons décidé de créer des solutions sur-mesure.</p>
+                        <p data-key="about_story_p2">De notre premier projet, Geschool ERP, à nos services de VTC et de
+                            Cloud Hosting, chaque étape de notre parcours a été guidée par l'écoute de nos clients et
+                            une quête incessante d'excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === NOS VALEURS === -->
+        <section class="values-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-key="about_values_title">Ce qui nous guide</h2>
+                    <p data-key="about_values_subtitle">Nos valeurs ne sont pas de simples mots sur un mur. Elles sont
+                        le moteur de chacune de nos actions et la garantie de notre engagement envers vous.</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <img src="images/icon-innovation.jpg" alt="Icône Innovation" class="value-icon">
+                        <h3 data-key="about_value1_title">Innovation</h3>
+                        <p data-key="about_value1_desc">Nous repoussons les limites pour créer des solutions qui non
+                            seulement répondent aux besoins actuels, mais anticipent aussi ceux de demain.</p>
+                    </div>
+                    <div class="value-card">
+                        <img src="images/icon-integrity.jpg" alt="Icône Intégrité" class="value-icon">
+                        <h3 data-key="about_value2_title">Intégrité</h3>
+                        <p data-key="about_value2_desc">La confiance se mérite. Nous agissons avec transparence et
+                            honnêteté dans toutes nos relations, avec nos clients comme nos partenaires.</p>
+                    </div>
+                    <div class="value-card">
+                        <img src="images/icon-customer.jpg" alt="Icône Client" class="value-icon">
+                        <h3 data-key="about_value3_title">Orientation Client</h3>
+                        <p data-key="about_value3_desc">Votre succès est notre succès. Nous nous engageons à comprendre
+                            vos défis pour vous offrir un service et un support inégalés.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === NOTRE ENGAGEMENT (Remplace la section Équipe) === -->
+        <section class="commitment-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-key="about_commitment_title">Notre Engagement Envers Vous</h2>
+                    <p data-key="about_commitment_subtitle">Plus qu'un fournisseur de services, nous sommes votre
+                        partenaire de confiance. Voici les piliers sur lesquels repose chacune de nos collaborations.
+                    </p>
+                </div>
+                <div class="commitment-grid">
+                    <div class="commitment-card">
+                        <img src="images/icon-quality.jpg" alt="Icône Qualité" class="commitment-icon">
+                        <h3 data-key="about_commitment1_title">Qualité Exigeante</h3>
+                        <p data-key="about_commitment1_desc">Nous appliquons les standards les plus élevés à chaque
+                            étape de nos projets, de la conception au déploiement, pour des résultats fiables et
+                            durables.</p>
+                    </div>
+                    <div class="commitment-card">
+                        <img src="images/icon-partnership.jpg" alt="Icône Partenariat" class="commitment-icon">
+                        <h3 data-key="about_commitment2_title">Approche Partenaire</h3>
+                        <p data-key="about_commitment2_desc">Nous travaillons à vos côtés, en totale transparence. Votre
+                            vision devient notre mission commune, assurant un alignement parfait de nos objectifs.</p>
+                    </div>
+                    <div class="commitment-card">
+                        <img src="images/icon-support.jpg" alt="Icône Support" class="commitment-icon">
+                        <h3 data-key="about_commitment3_title">Support Proactif</h3>
+                        <p data-key="about_commitment3_desc">Notre mission ne s'arrête pas à la livraison. Nous assurons
+                            un suivi et un support réactifs pour garantir la performance continue de vos solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === APPEL À L'ACTION (CTA) === -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-key="about_cta_title">Prêt à construire l'avenir avec nous ?</h2>
+                <p data-key="about_cta_desc">Discutons de vos projets. Notre équipe est prête à transformer vos défis en
+                    opportunités.</p>
+                <a href="contact.html" class="btn btn-primary" data-key="about_cta_btn">Contactez-nous</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h5 data-key="footer_explore_title">Explorer</h5>
+                    <ul>
+                        <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                        <li><a href="about.html" data-key="nav_about_footer">À Propos</a></li>
+                        <li><a href="vtc.html" data-key="nav_vtc">ZAZA</a></li>
+                        <li><a href="nextcloud.html" data-key="nav_cloud">Cloud Hosting</a></li>
+                        <li><a href="geschool.html" data-key="nav_geschool">Geschool</a></li>
+                        <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                        <li><a href="contact.html" data-key="nav_contact_footer">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5 data-key="footer_contact_title">Nous Joindre</h5>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <img src="images/location-icon.png" alt="Adresse" class="icon">
+                            <span data-key="footer_address">Immeuble acacia, Mpita, Pointe-Noire, Congo</span>
+                        </li>
+                        <li>
+                            <img src="images/email-icon.png" alt="Email" class="icon">
+                            <a href="mailto:contact@smartwise.cg">contact@smartwise.cg</a>
+                        </li>
+                        <li>
+                            <img src="images/phone-icon.png" alt="Téléphone" class="icon">
+                            <a href="tel:+242056600459">05 660 04 59</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" title="Facebook"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="#" title="Instagram"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                </div>
+                <p class="footer-copyright" data-key="footer_copyright">&copy; 2025 Smart Wise. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="translations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="script-about.js"></script>
+</body>
+
+</html>

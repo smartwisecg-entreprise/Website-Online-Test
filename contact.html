@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="meta_title_contact">Contactez-nous - Smart Wise</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="images/logo_spirale.png" alt="Logo Smart Wise Spirale" class="logo-spirale">
+                        <img src="images/logo_text.png" alt="Smart Wise" class="logo-text">
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                    <li><a href="about.html" data-key="nav_about">À Propos</a></li>
+
+                    <!-- DÉBUT DU MENU DÉROULANT -->
+
+                    <li class="dropdown">
+                        <a href="#">
+                            <span data-key="nav_services">Nos Services</span>
+                            <span class="arrow-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- Lien 1 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="vtc.html">
+                                    <img src="images/car.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_vtc">Smart Wise VTC</span>
+                                </a>
+                            </li>
+                            <!-- Lien 2 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="nextcloud.html">
+                                    <img src="images/cloud-server.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_cloud">Smart Wise Cloud Hosting</span>
+                                </a>
+                            </li>
+                            <!-- Lien 3 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="geschool.html">
+                                    <img src="images/school.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_geschool">Geschool ERP</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- FIN DU MENU DÉROULANT -->
+                    <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                    <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <a href="#" lang="fr">FR</a>
+                    <a href="#" lang="en">EN</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero contact-hero">
+            <div class="hero-background">
+                <img src="images/contactus.webp" alt="Autoroute urbaine de nuit">
+            </div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 class="contact-hero-title">
+                        <span class="hero-word-1" data-key="contact_hero_word1">Entrons</span>
+                        <span class="hero-word-2" data-key="contact_hero_word2">en</span>
+                        <span class="hero-word-3" data-key="contact_hero_word3">Contact</span>
+                    </h1>
+                    <p data-key="contact_hero_subtitle">Une question ? Un projet ? N'hésitez pas à nous contacter. Notre
+                        équipe est là pour vous répondre dans les plus brefs délais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLEZ CE BLOC ENTIER DANS VOTRE contact.html, EN REMPLACEMENT DE L'ANCIENNE <section class="contact-section"> -->
+
+        <section class="contact-section">
+            <div class="container">
+
+                <!-- BLOC SUPÉRIEUR : INFO + FORMULAIRE -->
+                <div class="contact-upper-block">
+                    <!-- Panneau de gauche : Informations -->
+                    <div class="contact-info-panel">
+                        <h2 data-key="contact_info_title">Nos Coordonnées</h2>
+                        <p class="info-panel-intro" data-key="contact_info_intro">Nous sommes toujours ravis d'échanger.
+                            Contactez-nous via les informations ci-dessous ou laissez-nous un message.</p>
+                        <div class="info-block">
+                            <div class="info-icon-wrapper">
+                                <img src="images/location-icon.png" alt="Icône localisation" class="contact-icon">
+                            </div>
+                            <div class="info-content">
+                                <h3 data-key="contact_info_address_title">Adresse</h3>
+                                <p data-key="contact_info_address_content">Immeuble acacia, Mpita, Pointe-Noire, Congo
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info-block">
+                            <div class="info-icon-wrapper">
+                                <img src="images/phone-icon.png" alt="Icône téléphone" class="contact-icon">
+                            </div>
+                            <div class="info-content">
+                                <h3 data-key="contact_info_phone_title">Téléphone</h3>
+                                <p><a href="tel:+242056600459">05 660 04 59</a></p>
+                            </div>
+                        </div>
+                        <div class="info-block">
+                            <div class="info-icon-wrapper">
+                                <img src="images/email-icon.png" alt="Icône email" class="contact-icon">
+                            </div>
+                            <div class="info-content">
+                                <h3 data-key="contact_info_email_title">Email</h3>
+                                <p><a href="mailto:contact@smartwise.cg">contact@smartwise.cg</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panneau de droite : Formulaire -->
+                    <div class="contact-form-panel">
+                        <h2 data-key="contact_form_title">Envoyez-nous un message</h2>
+                        <!-- REMPLACEZ VOTRE FORMULAIRE ACTUEL PAR CELUI-CI -->
+                        <form action="https://formspree.io/f/xzzaladr" method="POST" class="contact-form">
+
+                            <!-- Nouvelle structure plus classique -->
+                            <div class="form-group">
+                                <label for="name" data-key="contact_form_name_label">Nom complet</label>
+                                <input type="text" id="name" name="name" required
+                                    data-key-placeholder="contact_form_name_placeholder"
+                                    placeholder="Votre nom complet">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" data-key="contact_form_email_label">Adresse e-mail</label>
+                                <input type="email" id="email" name="email" required
+                                    data-key-placeholder="contact_form_email_placeholder" placeholder="Votre e-mail">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" data-key="contact_form_subject_label">Sujet</label>
+                                <input type="text" id="subject" name="subject" required
+                                    data-key-placeholder="contact_form_subject_placeholder"
+                                    placeholder="Sujet de votre message">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" data-key="contact_form_message_label">Message</label>
+                                <textarea id="message" name="message" rows="5" required
+                                    data-key-placeholder="contact_form_message_placeholder"
+                                    placeholder="Écrivez votre message ici..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn">
+                                <span data-key="contact_form_submit_btn">Envoyer le Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- BLOC INFÉRIEUR : CARTE -->
+                <div class="contact-map-block">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!m12!1m3!1d7951.492671877028!2d11.864348600000003!3d-4.813560899999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2scg!4v1758009216284!5m2!1sfr!2scg"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FIN DU BLOC À REMPLACER -->
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h5 data-key="footer_explore_title">Explorer</h5>
+                    <ul>
+                        <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                        <li><a href="about.html" data-key="nav_about_footer">À Propos</a></li>
+                        <li><a href="vtc.html" data-key="nav_vtc">ZAZA</a></li>
+                        <li><a href="nextcloud.html" data-key="nav_cloud">Cloud Hosting</a></li>
+                        <li><a href="geschool.html" data-key="nav_geschool">Geschool</a></li>
+                        <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                        <li><a href="contact.html" data-key="nav_contact_footer">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h5 data-key="footer_contact_title">Nous Joindre</h5>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <img src="images/location-icon.png" alt="Adresse" class="icon">
+                            <span data-key="footer_address">Immeuble acacia, Mpita, Pointe-Noire, Congo</span>
+                        </li>
+                        <li>
+                            <img src="images/email-icon.png" alt="Email" class="icon">
+                            <a href="mailto:contact@smartwise.cg">contact@smartwise.cg</a>
+                        </li>
+                        <li>
+                            <img src="images/phone-icon.png" alt="Téléphone" class="icon">
+                            <a href="tel:+242056600459">05 660 04 59</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" title="Facebook"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="#" title="Instagram"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                </div>
+                <p class="footer-copyright" data-key="footer_copyright">&copy; 2025 Smart Wise. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="meta_title_geschool">Geschool - Logiciel de Gestion Scolaire Intégré</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- === IMPORTANT: GSAP & ScrollTrigger Libraries === -->
+    <!-- Assurez-vous que ces lignes sont bien présentes, sinon les animations ne fonctionneront pas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="container">
+                <!-- === MODIFICATION DU LOGO ICI === -->
+                <a href="index.html" class="logo-link">
+                    <div class="logo-container">
+                        <!-- La spirale, qui sera au-dessus -->
+                        <img src="images/logo_spirale.png" alt="Logo Smart Wise Spirale" class="logo-spirale">
+                        <!-- Le texte, qui se cachera derrière -->
+                        <img src="images/logo_text.png" alt="Smart Wise" class="logo-text">
+                    </div>
+                </a>
+                <!-- === FIN DE LA MODIFICATION === -->
+                <ul class="nav-links">
+                    <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                    <li><a href="about.html" data-key="nav_about">À Propos</a></li>
+
+                    <!-- DÉBUT DU MENU DÉROULANT -->
+
+                    <li class="dropdown">
+                        <a href="#">
+                            <span data-key="nav_services">Nos Services</span>
+                            <span class="arrow-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- Lien 1 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="vtc.html">
+                                    <img src="images/car.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_vtc">Smart Wise VTC</span>
+                                </a>
+                            </li>
+                            <!-- Lien 2 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="nextcloud.html">
+                                    <img src="images/cloud-server.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_cloud">Smart Wise Cloud Hosting</span>
+                                </a>
+                            </li>
+                            <!-- Lien 3 : data-key est maintenant sur le SPAN -->
+                            <li>
+                                <a href="geschool.html">
+                                    <img src="images/school.png" alt="" class="dropdown-icon">
+                                    <span data-key="nav_geschool">Geschool ERP</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- FIN DU MENU DÉROULANT -->
+                    <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                    <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <a href="#" lang="fr">FR</a>
+                    <a href="#" lang="en">EN</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero geschool-hero">
+            <div class="hero-background">
+                <img src="images/Geschool_Hero_Backgroung.webp" alt="Autoroute urbaine de nuit">
+            </div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 class="geschool-hero-title">
+                        <span class="hero-line-1" data-key="geschool_hero_line1">GESCHOOL:</span>
+                        <span class="hero-line-2" data-key="geschool_hero_line2">Le Progiciel de Gestion</span>
+                        <span class="hero-line-3" data-key="geschool_hero_line3">Scolaire 5 en 1</span>
+                    </h1>
+                    <p data-key="geschool_hero_subtitle">Une solution révolutionnaire et innovante intégrant 5 logiciels
+                        de gestion pour résoudre les problématiques du secteur éducatif et optimiser le fonctionnement
+                        de votre établissement.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn" data-key="geschool_hero_cta_contact">Demander une démo</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/geschool-service-image.png" alt="Illustration du logiciel Geschool">
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2 data-key="geschool_benefits_title">Une Plateforme Complète pour Votre École</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <img src="images/centralize-icon.png" alt="Icône de centralisation">
+                        <h3 data-key="geschool_benefit1_title">Tout Centralisé</h3>
+                        <p data-key="geschool_benefit1_desc">Gérez les élèves, les notes, les finances et la
+                            communication depuis une seule et unique interface intuitive.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="images/time-icon.png" alt="Icône de gain de temps">
+                        <h3 data-key="geschool_benefit2_title">Gain de Temps Massif</h3>
+                        <p data-key="geschool_benefit2_desc">Automatisez les tâches répétitives comme la génération des
+                            bulletins, les rappels de paiement et la gestion des absences.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="images/communication-icon.png" alt="Icône de communication">
+                        <h3 data-key="geschool_benefit3_title">Communication Améliorée</h3>
+                        <p data-key="geschool_benefit3_desc">Renforcez le lien entre l'école et les parents grâce à un
+                            portail dédié et des notifications par SMS/Mail.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="images/security-icon.png" alt="Icône de sécurité">
+                        <h3 data-key="geschool_benefit4_title">Données Sécurisées</h3>
+                        <p data-key="geschool_benefit4_desc">Protégez les informations sensibles de votre établissement
+                            avec un système de sauvegarde automatisée et robuste.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="detailed-features" class="features">
+            <div class="container">
+                <h2 data-key="geschool_detailed_features_title">Découvrez la puissance de chaque module</h2>
+
+                <div class="feature">
+                    <div class="feature-text">
+                        <h3 data-key="geschool_feature_block1_title">Gestion Complète des Apprenants</h3>
+                        <ul class="feature-list">
+                            <li data-key="geschool_feature_block1_item1">Suivi individuel et détaillé de la vie scolaire
+                                de chaque apprenant.</li>
+                            <li data-key="geschool_feature_block1_item2">Gestion de l'infirmerie et du suivi médical
+                                personnalisé.</li>
+                            <li data-key="geschool_feature_block1_item3">Constitution d'un dossier exhaustif pour chaque
+                                élève.</li>
+                            <li data-key="geschool_feature_block1_item4">Production automatisée et simplifiée des cartes
+                                d'identité scolaire et des cartes d'accès.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <img src="images/geschool-feature-students.png" alt="Interface de gestion des étudiants">
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="images/geschool-feature-grades.png" alt="Interface de gestion des notes scolaires">
+                    </div>
+                    <div class="feature-text">
+                        <h3 data-key="geschool_feature_block2_title">Pilotage Pédagogique et Administratif</h3>
+                        <ul class="feature-list">
+                            <li data-key="geschool_feature_block2_item1">Calculs automatiques des notes et des moyennes.
+                            </li>
+                            <li data-key="geschool_feature_block2_item2">Gestion centralisée des absences et des
+                                conduites des apprenants.</li>
+                            <li data-key="geschool_feature_block2_item3">Production instantanée et automatique des
+                                bulletins de notes.</li>
+                            <li data-key="geschool_feature_block2_item4">Génération de certificats de scolarité et
+                                d'autorisations d'entrée/sortie en un clic.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-text">
+                        <h3 data-key="geschool_feature_block3_title">Maîtrise des Finances et de la Scolarité</h3>
+                        <ul class="feature-list">
+                            <li data-key="geschool_feature_block3_item1">Gestion des caisses, rappels de paiement et
+                                édition de bulletins de renvoi.</li>
+                            <li data-key="geschool_feature_block3_item2">Clôture journalière, mensuelle ou annuelle et
+                                suivi des décaissements.</li>
+                            <li data-key="geschool_feature_block3_item3">Encaissement des frais, gestion des moratoires
+                                et contrôle des solvabilités.</li>
+                            <li data-key="geschool_feature_block3_item4">Prise en compte simple des réductions de frais.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <img src="images/geschool-feature-finance.png" alt="Dashboard financier">
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="images/geschool-feature-communication.png"
+                            alt="Notification par SMS sur un téléphone">
+                    </div>
+                    <div class="feature-text">
+                        <h3 data-key="geschool_feature_block4_title">Communication Parentale Simplifiée (SMS/Mail)</h3>
+                        <ul class="feature-list">
+                            <li data-key="geschool_feature_block4_item1">Notifications automatiques lors des paiements à
+                                la caisse.</li>
+                            <li data-key="geschool_feature_block4_item2">Alertes pour l'arrivée et le départ des
+                                apprenants de l'école.</li>
+                            <li data-key="geschool_feature_block4_item3">Envoi de communications groupées ou
+                                individuelles aux parents.</li>
+                            <li data-key="geschool_feature_block4_item4">Partage des notes de classe et des dates
+                                d'examens officiels.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-text">
+                        <h3 data-key="geschool_feature_block5_title">Tableaux de Bord et Sécurité des Données</h3>
+                        <ul class="feature-list">
+                            <li data-key="geschool_feature_block5_item1">Visualisez les effectifs détaillés par classe
+                                ou pour tout l'établissement.</li>
+                            <li data-key="geschool_feature_block5_item2">Accédez aux états financiers par cycle, classe
+                                ou de manière globale.</li>
+                            <li data-key="geschool_feature_block5_item3">Protégez les données de l'établissement grâce à
+                                un module de sauvegarde automatisée intégré.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <img src="images/geschool-feature-dashboard.png" alt="Tableau de bord avec des graphiques">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="download">
+            <div class="container">
+                <h2 data-key="geschool_contact_title">Intéressé par Geschool ?</h2>
+                <p data-key="geschool_contact_desc">Contactez-nous dès aujourd'hui pour une démonstration personnalisée
+                    et découvrez comment Geschool peut transformer la gestion de votre établissement.</p>
+                <a href="https://wa.me/242056323722?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20logiciel%20Geschool."
+                    target="_blank" class="btn btn-secondary" data-key="geschool_contact_cta" data-attr="href"
+                    data-key-href="geschool_contact_wa_link">Contacter via WhatsApp</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <!-- Grille symétrique à deux colonnes -->
+            <div class="footer-grid">
+                <!-- Colonne 1: Tous les liens regroupés -->
+                <div class="footer-column">
+                    <h5 data-key="footer_explore_title">Explorer</h5>
+                    <ul>
+                        <li><a href="index.html" data-key="nav_home">Accueil</a></li>
+                        <li><a href="about.html" data-key="nav_about_footer">À Propos</a></li>
+                        <li><a href="vtc.html" data-key="nav_vtc">ZAZA</a></li>
+                        <li><a href="nextcloud.html" data-key="nav_cloud">Cloud Hosting</a></li>
+                        <li><a href="geschool.html" data-key="nav_geschool">Geschool</a></li>
+                        <li><a href="news.html" data-key="nav_news">Actualités</a></li>
+                        <li><a href="contact.html" data-key="nav_contact_footer">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 2: Contact -->
+                <div class="footer-column">
+                    <h5 data-key="footer_contact_title">Nous Joindre</h5>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <img src="images/location-icon.png" alt="Adresse" class="icon">
+                            <span data-key="footer_address">Immeuble acacia, Mpita, Pointe-Noire, Congo</span>
+                        </li>
+                        <li>
+                            <img src="images/email-icon.png" alt="Email" class="icon">
+                            <a href="mailto:contact@smartwise.cg">contact@smartwise.cg</a>
+                        </li>
+                        <li>
+                            <img src="images/phone-icon.png" alt="Téléphone" class="icon">
+                            <a href="tel:+242056600459">05 660 04 59</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" title="Facebook"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="#" title="Instagram"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                </div>
+                <p class="footer-copyright" data-key="footer_copyright">&copy; 2025 Smart Wise. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
