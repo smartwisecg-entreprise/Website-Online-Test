@@ -1640,13 +1640,24 @@ footer {
     padding: 40px;
     text-align: center;
     border-radius: 12px;
-    border: 1px solid #e9ecef;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    
+    /* MODIFICATION ICI : On prépare la bordure invisible pour éviter que le texte ne saute */
+    border-bottom: 3px solid transparent;
+
+    /* On s'assure que l'ombre est similaire à celle de l'expertise */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    
+    /* MODIFICATION ICI : On ajoute border-bottom à la transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-bottom 0.3s ease;
 }
 
 .value-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    
+    /* MODIFICATION ICI : La couleur apparaît au survol */
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .value-icon {
@@ -1680,17 +1691,28 @@ footer {
 }
 
 .commitment-card {
-    background: var(--light-gray); /* Léger fond pour se démarquer */
+    background: var(--light-gray);
     padding: 40px;
     border-radius: 12px;
-    border: 1px solid #e9ecef;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left; /* Alignement à gauche pour un look plus "corporate" */
+    border: none;
+    text-align: left;
+    
+    /* MODIFICATION ICI : Bordure invisible par défaut */
+    border-bottom: 3px solid transparent;
+
+    /* On s'assure que l'ombre est similaire à celle de l'expertise */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    
+    /* MODIFICATION ICI : Transition ajoutée */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-bottom 0.3s ease;
 }
 
 .commitment-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    
+    /* MODIFICATION ICI : Couleur au survol */
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .commitment-icon {
@@ -1749,8 +1771,113 @@ footer {
     transform: translateY(-3px);
 }
 
+/* ================================================================ */
+/* ===            SECTION DOMAINES D'EXPERTISE                  === */
+/* ================================================================ */
 
-/* --- Media Queries pour le Responsive --- */
+.expertise-section {
+    background-color: var(--light-gray); /* Fond gris pour contraster avec Story (blanc) */
+    padding: 100px 20px;
+}
+
+/* Si la section Values est déjà grise, changez la couleur ci-dessus en var(--white-color) 
+   ou changez la couleur de la section Values en blanc pour alterner. */
+
+.expertise-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.expertise-card {
+    background: var(--white-color);
+    border-radius: 15px;
+    padding: 35px 25px;
+    width: 300px; /* Largeur fixe pour uniformité ou flex-basis */
+    flex-grow: 1;
+    max-width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-bottom 0.3s ease;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+}
+
+.expertise-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid var(--primary-color); /* Petite touche de couleur au survol */
+}
+
+.icon-wrapper {
+    background-color: #f0f4f8; /* Fond léger derrière l'icône */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    transition: background-color 0.3s ease;
+}
+
+.expertise-card:hover .icon-wrapper {
+    background-color: #e2e8f0;
+}
+
+.expertise-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.expertise-card h3 {
+    font-size: 1.25em;
+    color: var(--dark-color);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.expertise-card p {
+    font-size: 0.95em;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+/* --- Optimisation des Animations GSAP --- */
+
+/* Classe utilitaire pour cacher les éléments au chargement (optionnel mais recommandé) */
+.gsap-reveal-hero, 
+.gsap-reveal-text, 
+.expertise-card, 
+.value-card, 
+.commitment-card {
+    will-change: transform, opacity; /* Optimisation performance navigateur */
+    visibility: hidden; /* GSAP le passera en visible automatiquement */
+}
+
+/* Effet "Masque" pour les images (Story) */
+.reveal-image-mask {
+    overflow: hidden;
+    position: relative;
+}
+
+.reveal-image-mask img {
+    transform-origin: center;
+    will-change: transform;
+}
+
+/* Responsive section expertise */
+@media (max-width: 768px) {
+    .expertise-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+/* --- Media Queries pour le Responsive1 --- */
 @media (max-width: 992px) {
     .story-content {
         grid-template-columns: 1fr;
